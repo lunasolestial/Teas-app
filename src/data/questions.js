@@ -1,0 +1,1488 @@
+export const QUESTIONS = [
+  // ─── READING: Key Ideas and Details ───────────────────────────────────────
+  {
+    id: 'r-kid-1',
+    topicId: 'key-ideas',
+    subjectId: 'reading',
+    question:
+      'Read the following passage: "Each autumn, monarch butterflies travel up to 3,000 miles from the United States and Canada to overwintering sites in central Mexico. Scientists have long puzzled over how monarchs navigate this journey, as no individual butterfly completes a round trip — the return migration is carried out by subsequent generations. Recent research suggests that monarchs use a time-compensated sun compass: internal circadian clocks help them adjust their flight direction based on the sun\'s position throughout the day. However, habitat loss, pesticide use, and climate variability have contributed to a decline of more than 80 percent in the monarch population over the past two decades." What is the main idea of this passage?',
+    options: [
+      'Monarchs navigate using a time-compensated sun compass based on circadian clocks.',
+      'The monarch butterfly undertakes a remarkable migration that is increasingly threatened by environmental pressures.',
+      'Climate variability is the primary cause of the monarch butterfly\'s population decline.',
+      'No individual monarch butterfly is able to complete both the southward and northward migration.',
+    ],
+    correct: 1,
+    explanation:
+      'B captures both key points: the extraordinary nature of the migration AND the environmental threats. A focuses only on navigation — one supporting detail. C singles out one cause among three listed. D is a single supporting fact about the migration cycle.',
+  },
+  {
+    id: 'r-kid-2',
+    topicId: 'key-ideas',
+    subjectId: 'reading',
+    question:
+      'Read the following passage: "Public libraries in the United States have quietly transformed over the past two decades. While book circulation has declined by nearly 25 percent since 2009, overall library visits have remained stable or increased in many communities. Libraries have responded by expanding their offerings: digital lending platforms, makerspaces with 3D printers, coding workshops, and on-site social services now complement traditional book lending. In cities like Denver and Chicago, libraries have partnered with social service agencies to embed case workers on-site." Based on the passage, what can be most reasonably inferred?',
+    options: [
+      'Libraries will eventually be replaced entirely by digital platforms.',
+      'Libraries have successfully adapted their role to serve changing community needs.',
+      'The decline in book circulation proves that reading is becoming less popular.',
+      'Social workers are now more central to libraries than librarians.',
+    ],
+    correct: 1,
+    explanation:
+      'The passage describes libraries expanding services while maintaining overall visitation. B is the best-supported inference. A is not supported — adaptation ≠ replacement. C misinterprets the data (circulation ≠ popularity of reading). D is not stated.',
+  },
+  {
+    id: 'r-kid-3',
+    topicId: 'key-ideas',
+    subjectId: 'reading',
+    question:
+      'Read the following passage: "Urban forestry programs have gained significant momentum as cities seek cost-effective strategies to address rising temperatures. Studies consistently show that tree canopy cover reduces ambient temperatures by 5 to 10 degrees Fahrenheit through evapotranspiration and shading. Beyond cooling, urban trees filter particulate air pollutants, absorb stormwater that would otherwise stress sewer systems, and provide documented psychological benefits for residents. Despite these advantages, tree planting initiatives frequently stall due to limited municipal budgets and insufficient aftercare — newly planted trees have high mortality rates if not watered during their first three years." Which of the following best summarizes this passage?',
+    options: [
+      'Urban tree programs must be abandoned because of their high mortality rates.',
+      'The primary purpose of urban forestry is to reduce air temperatures in city centers.',
+      'Urban trees offer numerous environmental and social benefits, but sustaining these programs remains a persistent challenge.',
+      'Cities should prioritize urban forestry over all other environmental strategies.',
+    ],
+    correct: 2,
+    explanation:
+      'C captures both key components: the multiple benefits AND the implementation challenge (budget, aftercare). A contradicts the passage\'s overall positive view. B identifies only one benefit. D goes beyond what the passage states.',
+  },
+  {
+    id: 'r-kid-4',
+    topicId: 'key-ideas',
+    subjectId: 'reading',
+    question:
+      'Read the following passage: "Arctic sea ice plays a critical role in regulating Earth\'s climate by reflecting sunlight back into space. As ice cover shrinks, darker ocean water absorbs more solar energy, accelerating warming in a process called the ice-albedo feedback loop. Since 1979, the Arctic has lost approximately 13 percent of its sea ice extent per decade. This accelerated melting raises sea levels and disrupts weather patterns far beyond the polar region, affecting temperature extremes and precipitation across North America, Europe, and Asia." Which of the following is a SUPPORTING DETAIL rather than the main idea?',
+    options: [
+      'Arctic sea ice loss accelerates global warming through the ice-albedo feedback loop.',
+      'Since 1979, the Arctic has lost approximately 13 percent of its sea ice per decade.',
+      'Arctic sea ice loss has far-reaching consequences for Earth\'s climate system.',
+      'The melting of Arctic ice disrupts weather patterns and raises sea levels globally.',
+    ],
+    correct: 1,
+    explanation:
+      'B gives a specific statistic (13% per decade since 1979) — a precise data point that supports the broader claims. A, C, and D are all broad enough to function as topic sentences. B is the narrow supporting detail.',
+  },
+  {
+    id: 'r-kid-5',
+    topicId: 'key-ideas',
+    subjectId: 'reading',
+    question:
+      '"Despite growing adoption of e-readers and digital reading applications, researchers report that comprehension and retention rates are measurably higher when readers engage with printed text. In a 2018 meta-analysis of 54 studies, students who read from screens scored significantly lower on tests assessing deep comprehension than those who read the same material in print." In this passage, the word "despite" signals that the information that follows will:',
+    options: [
+      'Provide examples of the advantages of digital reading technology.',
+      'Present a contrast with the expectation created by growing digital adoption.',
+      'Explain why e-readers have become increasingly popular worldwide.',
+      'Define what is meant by "comprehension and retention rates."',
+    ],
+    correct: 1,
+    explanation:
+      '"Despite growing adoption of e-readers" sets up an expectation that digital is effective. "Despite" signals the following will contrast that expectation — specifically, that comprehension is lower on screens despite widespread adoption.',
+  },
+  {
+    id: 'r-kid-6',
+    topicId: 'key-ideas',
+    subjectId: 'reading',
+    question:
+      '"Soil contains more carbon than the atmosphere and all plant life combined, making it a critical component of the global carbon cycle. When soil is disturbed through plowing, construction, or overgrazing, stored carbon is released into the atmosphere as carbon dioxide. Conversely, practices such as cover cropping and reduced tillage allow soils to accumulate organic matter and sequester additional carbon over time." According to the passage, what happens when soil is disturbed?',
+    options: [
+      'Soil can no longer support plant growth.',
+      'Cover cropping practices must be immediately implemented.',
+      'Stored carbon is released into the atmosphere as carbon dioxide.',
+      'Greenhouse gas emissions become impossible to offset.',
+    ],
+    correct: 2,
+    explanation:
+      'The second sentence states this directly: disturbing soil releases stored carbon as CO₂. A is not stated. B describes a separate remedy, not a consequence of disturbance. D is an overstatement not supported by the passage.',
+  },
+  {
+    id: 'r-kid-7',
+    topicId: 'key-ideas',
+    subjectId: 'reading',
+    question:
+      '"A 2022 survey found that employees who worked fully remote reported higher job satisfaction than on-site workers. However, managers reported significantly greater difficulty assessing remote employees\' performance and building team cohesion. The survey also found that employees in hybrid arrangements — splitting time between home and office — reported the highest satisfaction and lowest feelings of isolation." Which of the following is an INFERENCE rather than an explicitly stated fact?',
+    options: [
+      'Fully remote employees reported higher job satisfaction than on-site workers.',
+      'Managers had difficulty assessing performance and building cohesion with remote teams.',
+      'Hybrid arrangements may offer a compromise between the satisfaction of remote work and the collaboration benefits of in-person work.',
+      'Hybrid employees reported the highest satisfaction and lowest feelings of isolation.',
+    ],
+    correct: 2,
+    explanation:
+      'C is an inference — it draws a logical conclusion (hybrid as compromise) not explicitly stated in the passage. A, B, and D are all directly stated findings from the survey.',
+  },
+  {
+    id: 'r-kid-8',
+    topicId: 'key-ideas',
+    subjectId: 'reading',
+    question:
+      '"Over the past three decades, sleep research has significantly revised our understanding of rest. Scientists once viewed sleep as a passive state; we now know the brain remains highly active, consolidating memories, flushing waste products through the glymphatic system, and regulating hormone release. Chronic sleep deprivation has been linked to increased risk of cardiovascular disease, metabolic disorders, and impaired immune function. Despite this evidence, surveys show that more than one-third of American adults report sleeping fewer than the recommended seven hours per night." What is the main idea of this passage?',
+    options: [
+      'The glymphatic system is the most important process that occurs during sleep.',
+      'Sleep is a complex and biologically critical process that a significant portion of Americans are not getting enough of.',
+      'Chronic sleep deprivation is the primary cause of cardiovascular disease.',
+      'Scientists previously had no understanding of what the brain does during sleep.',
+    ],
+    correct: 1,
+    explanation:
+      'B covers both central themes: the importance and complexity of sleep AND the widespread deprivation problem. A focuses on one detail. C overstates — the passage says "linked to," not "primary cause." D misrepresents — scientists thought sleep was passive, not that they had "no understanding."',
+  },
+  {
+    id: 'r-kid-9',
+    topicId: 'key-ideas',
+    subjectId: 'reading',
+    question:
+      '"The Perseverance rover has transmitted over one million images from the Martian surface and successfully produced oxygen from the thin carbon dioxide atmosphere. These achievements represent major milestones toward eventual human habitation of Mars. Yet a crewed Mars mission faces obstacles no robotic probe encounters: radiation exposure during transit, muscle and bone deterioration from prolonged low gravity, and the psychological demands of a two-to-three-year isolation period." In this sentence, the word "yet" signals that the following information will:',
+    options: [
+      'Support the argument that Mars is ready for human habitation.',
+      'Introduce contrasting challenges that complicate a crewed mission.',
+      'Provide additional evidence that robotic rovers are sufficient.',
+      'Define the expected timeline for a crewed Mars mission.',
+    ],
+    correct: 1,
+    explanation:
+      '"Yet" signals contrast. The passage first describes successes and milestones, then "yet" introduces challenges the reader would not expect given the optimistic opening. B correctly identifies this as a contrast signal.',
+  },
+  {
+    id: 'r-kid-10',
+    topicId: 'key-ideas',
+    subjectId: 'reading',
+    question:
+      '"Proponents of year-round school calendars argue that the traditional ten-week summer break causes significant learning loss, particularly in students from lower-income households. Critics counter that shorter, more frequent breaks reduce teacher burnout and allow for necessary facility maintenance. A 2020 review of 39 studies found mixed results — some schools showed modest academic gains with year-round schedules, while others showed no significant difference." Which statement from the passage is an OPINION rather than a fact?',
+    options: [
+      'A 2020 review examined 39 studies on year-round school calendars.',
+      'Some schools with year-round schedules showed modest academic gains.',
+      'Shorter, more frequent breaks reduce teacher burnout and allow for facility maintenance.',
+      'Year-round calendars are the most effective reform in modern public education.',
+    ],
+    correct: 2,
+    explanation:
+      'C is a claim made by critics — a belief about what shorter breaks do, not a verified research finding. A and B are stated research findings. D is not in the passage at all.',
+  },
+
+  // ─── READING: Craft and Structure ─────────────────────────────────────────
+  {
+    id: 'r-cs-1',
+    topicId: 'craft-structure',
+    subjectId: 'reading',
+    question:
+      'Read the following passage: "The continued use of single-use plastic packaging represents one of the most solvable environmental crises of our time. Biodegradable alternatives are commercially available, consumer surveys indicate willingness to pay a modest premium for sustainable packaging, and eleven countries have already implemented successful bans. There is no defensible reason for policymakers to delay action. Every year of inaction means another eight million metric tons of plastic entering the world\'s oceans." What is the author\'s primary purpose?',
+    options: [
+      'To inform readers about the chemical properties of biodegradable packaging materials.',
+      'To entertain readers with accounts of ocean wildlife affected by plastic pollution.',
+      'To persuade policymakers to take immediate action on single-use plastic legislation.',
+      'To objectively compare the costs and benefits of different packaging alternatives.',
+    ],
+    correct: 2,
+    explanation:
+      'The passage uses urgent, evaluative language ("most solvable," "no defensible reason," "every year of inaction") directed at policymakers. This is a persuasive purpose — not informational (A), entertaining (B), or comparative (D).',
+  },
+  {
+    id: 'r-cs-2',
+    topicId: 'craft-structure',
+    subjectId: 'reading',
+    question:
+      'Read the following passage: "When wolves were reintroduced to Yellowstone National Park in 1995 after a 70-year absence, researchers expected changes in elk populations. What they did not anticipate was a cascade of ecosystem changes called a trophic cascade. As wolf predation reduced elk browsing along riverbanks, vegetation recovered near waterways. The roots of newly established willows and aspens stabilized the banks, reducing erosion and altering the course of rivers. Biodiversity then increased as beaver populations expanded in response to returning vegetation." What text structure does this passage primarily use?',
+    options: [
+      'Compare and contrast',
+      'Problem and solution',
+      'Chronological sequence',
+      'Cause and effect',
+    ],
+    correct: 3,
+    explanation:
+      'The passage traces a chain: wolf reintroduction → reduced elk browsing → vegetation recovery → bank stabilization → changed rivers → increased biodiversity. Signal words "as," "reducing," and "in response to" are all cause-effect connectors.',
+  },
+  {
+    id: 'r-cs-3',
+    topicId: 'craft-structure',
+    subjectId: 'reading',
+    question:
+      '"As ocean temperatures rise, dissolved oxygen levels in coastal waters have become increasingly depleted, creating zones where marine life cannot survive. These hypoxic regions — sometimes called dead zones — form when warm water holds less oxygen and when decomposing algal blooms consume the remaining supply." Based on context, what does "depleted" most likely mean?',
+    options: [
+      'Contaminated or chemically altered',
+      'Significantly reduced or used up',
+      'Heated to dangerous temperatures',
+      'Filled with algae and other organisms',
+    ],
+    correct: 1,
+    explanation:
+      'Context clues — "zones where marine life cannot survive" and "dead zones" — confirm that oxygen has been substantially used up. Contaminated (A), heated (C), and filled with algae (D) all contradict the context.',
+  },
+  {
+    id: 'r-cs-4',
+    topicId: 'craft-structure',
+    subjectId: 'reading',
+    question:
+      '"When the James Webb Space Telescope transmitted its first full-color images in July 2022, scientists described the moment in almost reverential terms. For researchers who had spent decades on the project, the images — resolving galaxies more than 13 billion light-years away — were \'beyond anything we had hoped.\' The images show light that began traveling before Earth existed. To view them is to witness deep time itself, to hold the beginning of the universe in a photograph." The tone of this passage is best described as:',
+    options: [
+      'Skeptical and cautious',
+      'Critical and analytical',
+      'Detached and bureaucratic',
+      'Awestruck and reverential',
+    ],
+    correct: 3,
+    explanation:
+      '"Reverential," "beyond anything we had hoped," "witness deep time," and "beginning of the universe" convey profound wonder. The passage is not questioning (skeptical), detached, or critical — it expresses awe at a scientific achievement.',
+  },
+  {
+    id: 'r-cs-5',
+    topicId: 'craft-structure',
+    subjectId: 'reading',
+    question:
+      '"Making sourdough requires a multi-stage process relying on natural fermentation. First, a starter culture of wild yeast and bacteria must be established by mixing flour and water and allowing it to ferment for several days. Next, the starter is combined with more flour, water, and salt to form the dough. The dough then undergoes a slow bulk fermentation during which yeast produces carbon dioxide that causes the bread to rise. Finally, the shaped loaves rest in the refrigerator overnight before baking at high temperature." Which words in this passage most clearly indicate a sequential text structure?',
+    options: [
+      '"natural fermentation," "wild yeast," "carbon dioxide"',
+      '"First," "Next," "then," "Finally"',
+      '"flour and water," "room temperature," "high temperature"',
+      '"several days," "overnight," "the following day"',
+    ],
+    correct: 1,
+    explanation:
+      '"First," "Next," "then," and "Finally" are sequence signal words that explicitly order the steps. The other options name ingredients, conditions, or time references — none of which signal sequence structure.',
+  },
+  {
+    id: 'r-cs-6',
+    topicId: 'craft-structure',
+    subjectId: 'reading',
+    question:
+      '"The rapid pace of technological innovation has made obsolescence a persistent challenge. Software applications that were industry standards a decade ago are rarely used today; file formats popular in the 1990s can no longer be opened by current programs. Archivists face particularly acute versions of this problem: documents stored on floppy disks may be permanently inaccessible if the hardware needed to read them no longer exists." Based on context, what does "obsolescence" most likely mean?',
+    options: [
+      'The process of upgrading technology to improve performance',
+      'The condition of becoming outdated and no longer useful',
+      'The storage of files on multiple backup systems',
+      'The conversion of physical documents to digital format',
+    ],
+    correct: 1,
+    explanation:
+      'Context clues — software "rarely used today," formats "can no longer be opened," documents "may be permanently inaccessible" — all point to something becoming outdated and unusable. A describes the opposite process.',
+  },
+  {
+    id: 'r-cs-7',
+    topicId: 'craft-structure',
+    subjectId: 'reading',
+    question:
+      '"Solar and wind energy share important characteristics: both are renewable, emit no greenhouse gases during operation, and have seen dramatic cost reductions over the past decade. However, they differ in significant ways. Solar panels generate electricity most efficiently in sunny, low-latitude regions, while wind turbines perform best in coastal areas, mountain passes, and open plains. Solar installations are generally quieter and require less land when mounted on existing structures, whereas large wind farms require substantial open space and can affect wildlife migration patterns." What text structure does this passage primarily use?',
+    options: [
+      'Problem and solution',
+      'Cause and effect',
+      'Compare and contrast',
+      'Chronological sequence',
+    ],
+    correct: 2,
+    explanation:
+      'The passage systematically presents shared characteristics and then key differences. Signal words include "both" (similarity), "However," "while," and "whereas" (contrast). No problem-solution or cause-effect relationship is being described.',
+  },
+  {
+    id: 'r-cs-8',
+    topicId: 'craft-structure',
+    subjectId: 'reading',
+    question:
+      '"I arrived at the salt marsh before sunrise, stepping carefully across the wet mud flats as the sky shifted from deep purple to amber. The marsh was nearly silent — then the red-winged blackbirds began their calls in successive waves, as if each bird was waking the next. I had come to count nesting activity, but I found myself simply standing still, watching a great blue heron fold itself into perfect stillness at the water\'s edge." From which point of view is this passage written?',
+    options: [
+      'Third person omniscient',
+      'Third person limited',
+      'Second person',
+      'First person',
+    ],
+    correct: 3,
+    explanation:
+      'The passage uses "I" and "myself" — the narrator is directly experiencing and describing the scene. First person is defined by I/me/my/mine. Third person uses he/she/they; second person uses you.',
+  },
+  {
+    id: 'r-cs-9',
+    topicId: 'craft-structure',
+    subjectId: 'reading',
+    question:
+      '"The 2020 recession hit small retailers particularly hard. Stores that had operated profitably for decades found their margins eroded by the combination of reduced foot traffic, supply chain disruptions, and the rapid shift to online purchasing. Many owners described their situation as precarious — caught between the cost of remaining open and the uncertainty of whether customer behavior would ever fully revert." Based on context, what does "precarious" most likely mean?',
+    options: [
+      'Stable and well-established',
+      'Financially profitable despite obstacles',
+      'Dangerously uncertain and unstable',
+      'Unfairly disadvantaged by larger competitors',
+    ],
+    correct: 2,
+    explanation:
+      '"Precarious" describes owners caught between bad options with uncertain outcomes. Context clues include "eroded margins," "uncertainty," and the description of difficult trade-offs. C — dangerously uncertain and unstable — best fits.',
+  },
+  {
+    id: 'r-cs-10',
+    topicId: 'craft-structure',
+    subjectId: 'reading',
+    question:
+      '"Traffic congestion costs American commuters an average of 54 hours per year in delays. In response to this challenge, city planners have proposed a range of interventions: congestion pricing zones that charge drivers for entering high-traffic areas during peak hours, expanded bus rapid transit networks, and employer incentives for staggered work schedules. Several cities, including London and Stockholm, have documented significant reductions in congestion after implementing pricing systems." What text structure does this passage primarily use?',
+    options: [
+      'Cause and effect',
+      'Chronological sequence',
+      'Compare and contrast',
+      'Problem and solution',
+    ],
+    correct: 3,
+    explanation:
+      '"Traffic congestion costs…" identifies the problem. "In response to this challenge, city planners have proposed…" introduces the solutions. "In response to" is a direct problem-solution signal. Cause-effect would explain why congestion happens; this passage explains what to do about it.',
+  },
+
+  // ─── READING: Integration of Knowledge ────────────────────────────────────
+  {
+    id: 'r-ik-1',
+    topicId: 'integration-knowledge',
+    subjectId: 'reading',
+    question:
+      'Passage A states: "Electric vehicles represent the most significant shift in personal transportation since the mass adoption of gasoline-powered cars. Battery costs have dropped more than 90 percent since 2010, and the average EV now achieves a range exceeding 250 miles per charge." Passage B states: "The environmental benefits of electric vehicles depend heavily on the energy source used to generate electricity. In regions where grids rely primarily on coal, an EV may produce more lifetime carbon emissions than a modern fuel-efficient gasoline vehicle." Which statement is best supported by BOTH passages?',
+    options: [
+      'Electric vehicles produce no environmental impact under any circumstances.',
+      'Electric vehicles are not yet a viable alternative to gasoline-powered cars.',
+      'The shift to electric vehicles is significant but involves considerations that vary by context.',
+      'Automakers should delay phasing out gasoline engines until grid issues are resolved.',
+    ],
+    correct: 2,
+    explanation:
+      'Passage A supports the significance of the shift. Passage B shows environmental benefit depends on grid type. Together they support C — significant but context-dependent. A is contradicted by Passage B. B goes further than either passage states. D is in neither passage.',
+  },
+  {
+    id: 'r-ik-2',
+    topicId: 'integration-knowledge',
+    subjectId: 'reading',
+    question:
+      'A bar graph shows annual book circulation at three public libraries from 2018 to 2022. Library A shows a steady increase from 45,000 to 68,000 checkouts. Library B shows a decline from 52,000 to 38,000. Library C remains relatively stable, ranging from 42,000 to 46,000. Which conclusion is best supported by this data alone?',
+    options: [
+      'Library A\'s growth was caused by expanded digital lending programs.',
+      'Library B will eventually close due to its declining circulation.',
+      'Library A had the greatest increase in annual checkouts during this period.',
+      'All three libraries serve communities of similar population size.',
+    ],
+    correct: 2,
+    explanation:
+      'Library A increased from 45,000 to 68,000 — an increase of 23,000, larger than any other change shown. C is directly supported by the data. A requires cause information the graph does not show. B predicts the future. D is not addressed by the data.',
+  },
+  {
+    id: 'r-ik-3',
+    topicId: 'integration-knowledge',
+    subjectId: 'reading',
+    question:
+      'A student is writing a research paper on microplastics in marine ecosystems. She finds four sources: the original 2019 study published in a peer-reviewed journal, a 2021 textbook chapter summarizing several such studies, a documentary film about ocean pollution, and a news article quoting the lead researcher. Which source would be considered the PRIMARY source?',
+    options: [
+      'The documentary film about ocean pollution',
+      'The textbook chapter summarizing multiple studies',
+      'The original 2019 peer-reviewed journal study',
+      'The news article quoting the lead researcher',
+    ],
+    correct: 2,
+    explanation:
+      'A primary source is the original document reporting first-hand data. The 2019 journal study is where the data was collected and first reported. The textbook, documentary, and news article all summarize or interpret that original work — making them secondary sources.',
+  },
+  {
+    id: 'r-ik-4',
+    topicId: 'integration-knowledge',
+    subjectId: 'reading',
+    question:
+      'A technology magazine published an article stating: "AI will replace 40 percent of current jobs within ten years. Every expert in the field agrees this transformation is inevitable. The evidence could not be clearer." The article cited no specific studies or data sources. The claim that "AI will replace 40 percent of current jobs within ten years" is best described as:',
+    options: [
+      'A fact verified by expert consensus',
+      'A prediction that functions as an opinion',
+      'A logical inference drawn from labor market data',
+      'A supporting detail from an objective industry report',
+    ],
+    correct: 1,
+    explanation:
+      'This is a prediction about the future made without cited data. Predictions about future events express a belief or projection — they function as opinions until confirmed by evidence. No specific study supports it here.',
+  },
+  {
+    id: 'r-ik-5',
+    topicId: 'integration-knowledge',
+    subjectId: 'reading',
+    question:
+      'A line graph shows honeybee colony counts in the United States from 2000 to 2022. The count drops from 2.6 million to 2.0 million overall, with sharp declines in 2006–2007, 2012–2013, and 2019–2020. The line partially recovers after each sharp decline but never returns to prior peak levels. Which conclusion is best supported by the graph alone?',
+    options: [
+      'Pesticide use is the primary cause of declining honeybee populations.',
+      'Honeybee colony counts declined overall between 2000 and 2022.',
+      'The U.S. honeybee population will continue declining through 2030.',
+      'All three sharp declines were caused by the same environmental factor.',
+    ],
+    correct: 1,
+    explanation:
+      'The graph shows the count dropped from 2.6M to 2.0M — B is a direct, accurate reading of the data. A introduces cause (pesticides), which the graph does not show. C predicts the future. D attributes all declines to one cause — beyond what the graph shows.',
+  },
+  {
+    id: 'r-ik-6',
+    topicId: 'integration-knowledge',
+    subjectId: 'reading',
+    question:
+      'An author writes: "I have spoken with dozens of parents at my child\'s school, and every single one of them told me that organic food is always healthier than conventional food. This proves beyond any doubt that organic food should be mandatory in all school cafeterias." This argument is best described as:',
+    options: [
+      'A valid conclusion based on a large, representative sample',
+      'An inference drawn from peer-reviewed nutritional research',
+      'An overgeneralization using anecdotal evidence and absolute language',
+      'A fact supported by school cafeteria data',
+    ],
+    correct: 2,
+    explanation:
+      '"Every single" parent at one school is a small, self-selected sample. "Always" and "proves beyond any doubt" are absolute claims without data. Together these represent an overgeneralization — drawing a universal conclusion from limited, non-representative evidence.',
+  },
+  {
+    id: 'r-ik-7',
+    topicId: 'integration-knowledge',
+    subjectId: 'reading',
+    question:
+      'Passage A states: "Standardized tests provide an objective, consistent measure of academic achievement that allows meaningful comparison across schools and reveals achievement gaps that might otherwise remain invisible." Passage B states: "Standardized tests measure a narrow range of skills and systematically disadvantage students whose cultural backgrounds differ from those assumed by test designers. The goal of closing achievement gaps cannot be achieved by the same instrument that produces them." How do the two passages primarily differ?',
+    options: [
+      'Passage A addresses state testing; Passage B addresses college admissions testing.',
+      'Passage A supports testing for its accountability value; Passage B argues it perpetuates inequity.',
+      'Both passages ultimately argue for reform rather than elimination of testing.',
+      'Passage A is written by a teacher; Passage B is written by a test developer.',
+    ],
+    correct: 1,
+    explanation:
+      'Passage A presents testing as objective and useful for revealing gaps. Passage B argues testing is flawed and reinforces gaps. B accurately captures this central disagreement. A and D invent details not in the passages. C is wrong — Passage B argues testing "produces" gaps, implying opposition rather than mere reform.',
+  },
+  {
+    id: 'r-ik-8',
+    topicId: 'integration-knowledge',
+    subjectId: 'reading',
+    question:
+      'A pie chart shows household energy use by category: Heating and cooling = 48%, Water heating = 18%, Appliances = 14%, Lighting = 9%, Electronics = 6%, Other = 5%. Which conclusion is best supported by this data alone?',
+    options: [
+      'Reducing appliance use will save more energy than reducing water heating.',
+      'Heating and cooling represents the largest share of household energy consumption.',
+      'Electronics and lighting together consume as much energy as appliances.',
+      'All households spend the most money on heating and cooling.',
+    ],
+    correct: 1,
+    explanation:
+      'At 48%, heating and cooling is the largest single category — B directly reads the data. A is wrong: appliances (14%) < water heating (18%), so the opposite is true. C: electronics (6%) + lighting (9%) = 15% ≠ appliances (14%). D introduces "money spent," which the chart does not show.',
+  },
+  {
+    id: 'r-ik-9',
+    topicId: 'integration-knowledge',
+    subjectId: 'reading',
+    question:
+      'An editorial argues that a city should invest in expanded public bus service. It cites a survey showing 68 percent of residents support better public transit, notes that traffic congestion costs the city $400 million annually, and references a successful transit expansion in a comparable city. Which of the following would most strengthen this argument?',
+    options: [
+      'A description of the history of the city\'s original transit system',
+      'Data showing that the comparable city\'s transit expansion reduced traffic and carbon emissions',
+      'A quote from a bus driver about the importance of public transportation',
+      'A comparison of bus fares across different cities nationwide',
+    ],
+    correct: 1,
+    explanation:
+      'The argument needs evidence that the proposed solution actually achieves its stated goal. B provides outcome data from the comparable city, directly supporting the claim that expansion works. A, C, and D add context or anecdote but do not strengthen the core claim.',
+  },
+  {
+    id: 'r-ik-10',
+    topicId: 'integration-knowledge',
+    subjectId: 'reading',
+    question:
+      '"A five-year study tracking 1,200 middle school students found a strong positive correlation between participation in organized sports and academic GPA — sports participants earned GPAs approximately 0.4 points higher. Researchers noted that supportive families and adequate household resources are factors that make students both more likely to participate in sports and more likely to succeed academically, suggesting that family environment may influence both outcomes." Which interpretation of the study is most appropriate?',
+    options: [
+      'Organized sports directly cause higher academic achievement.',
+      'There is a correlation between sports participation and higher GPA, but family environment may be a third factor influencing both.',
+      'Students who do not play sports should be enrolled in programs to improve their grades.',
+      'GPA is the best measure of academic success for middle school students.',
+    ],
+    correct: 1,
+    explanation:
+      'The researchers themselves identified a possible confounding variable (family environment). B accurately reflects what the data shows — correlation, not causation — and acknowledges the third factor. A assumes causation the study did not establish. C and D go far beyond what the study addresses.',
+  },
+
+  // ─── MATH: Numbers and Algebra ────────────────────────────────────────────
+  {
+    id: 'm-na-1',
+    topicId: 'numbers-algebra',
+    subjectId: 'math',
+    question: 'What is 3/4 ÷ 1/2?',
+    options: ['3/8', '3/2', '6/4', '1/2'],
+    correct: 1,
+    explanation: 'Keep, Change, Flip: 3/4 ÷ 1/2 = 3/4 × 2/1 = 6/4 = 3/2.',
+  },
+  {
+    id: 'm-na-2',
+    topicId: 'numbers-algebra',
+    subjectId: 'math',
+    question: 'A patient weighs 176 lbs. What is their weight in kilograms? (1 kg = 2.2 lbs)',
+    options: ['387.2 kg', '80 kg', '88 kg', '73.6 kg'],
+    correct: 1,
+    explanation: '176 ÷ 2.2 = 80 kg.',
+  },
+  {
+    id: 'm-na-3',
+    topicId: 'numbers-algebra',
+    subjectId: 'math',
+    question: 'Solve for x: 3x + 7 = 22',
+    options: ['x = 3', 'x = 5', 'x = 9', 'x = 15'],
+    correct: 1,
+    explanation: '3x + 7 = 22 → 3x = 15 → x = 5.',
+  },
+  {
+    id: 'm-na-4',
+    topicId: 'numbers-algebra',
+    subjectId: 'math',
+    question: 'What is 15% of 240?',
+    options: ['24', '36', '48', '16'],
+    correct: 1,
+    explanation: '0.15 × 240 = 36.',
+  },
+  {
+    id: 'm-na-5',
+    topicId: 'numbers-algebra',
+    subjectId: 'math',
+    question: 'A medication order reads: "Give 500 mg. Available: 250 mg/tablet." How many tablets should be given?',
+    options: ['0.5 tablet', '1 tablet', '2 tablets', '4 tablets'],
+    correct: 2,
+    explanation: 'D/H = 500 mg ÷ 250 mg = 2 tablets.',
+  },
+  {
+    id: 'm-na-6',
+    topicId: 'numbers-algebra',
+    subjectId: 'math',
+    question: 'Evaluate: 4 + 3 × 2² − 1',
+    options: ['23', '15', '27', '13'],
+    correct: 1,
+    explanation: 'PEMDAS: 2² = 4 first; then 3 × 4 = 12; then 4 + 12 − 1 = 15.',
+  },
+  {
+    id: 'm-na-7',
+    topicId: 'numbers-algebra',
+    subjectId: 'math',
+    question: 'A nurse works 36 out of 40 hours scheduled. What percent of scheduled hours did she work?',
+    options: ['85%', '90%', '94%', '88%'],
+    correct: 1,
+    explanation: '36 ÷ 40 = 0.90 = 90%.',
+  },
+  {
+    id: 'm-na-8',
+    topicId: 'numbers-algebra',
+    subjectId: 'math',
+    question: 'A drug label reads: "250 mg per 5 mL." How many mL are needed for a 750 mg dose?',
+    options: ['10 mL', '12 mL', '15 mL', '20 mL'],
+    correct: 2,
+    explanation: 'D/H × V = 750/250 × 5 = 3 × 5 = 15 mL.',
+  },
+  {
+    id: 'm-na-9',
+    topicId: 'numbers-algebra',
+    subjectId: 'math',
+    question: 'Which fraction is equivalent to 0.375?',
+    options: ['1/4', '3/8', '3/4', '5/8'],
+    correct: 1,
+    explanation: '3/8 = 0.375. (3 ÷ 8 = 0.375)',
+  },
+  {
+    id: 'm-na-10',
+    topicId: 'numbers-algebra',
+    subjectId: 'math',
+    question: 'A solution requires a 1:4 drug-to-saline ratio. If you use 50 mL of drug, how many mL of saline are needed?',
+    options: ['12.5 mL', '150 mL', '200 mL', '250 mL'],
+    correct: 2,
+    explanation: '1:4 ratio means for every 1 part drug, 4 parts saline. 50 × 4 = 200 mL of saline.',
+  },
+
+  // ─── MATH: Measurement and Data ───────────────────────────────────────────
+  {
+    id: 'm-md-1',
+    topicId: 'measurement-data',
+    subjectId: 'math',
+    question: 'Convert 2.5 liters to milliliters.',
+    options: ['250 mL', '2,500 mL', '25 mL', '0.25 mL'],
+    correct: 1,
+    explanation: '1 L = 1,000 mL. 2.5 × 1,000 = 2,500 mL.',
+  },
+  {
+    id: 'm-md-2',
+    topicId: 'measurement-data',
+    subjectId: 'math',
+    question: 'Five patients have pain scores: 4, 7, 3, 9, 7. What is the median pain score?',
+    options: ['4', '6', '7', '9'],
+    correct: 2,
+    explanation: 'Sort: 3, 4, 7, 7, 9. The middle (3rd) value is 7.',
+  },
+  {
+    id: 'm-md-3',
+    topicId: 'measurement-data',
+    subjectId: 'math',
+    question: 'A patient has temperatures: 98.6°F, 101.2°F, 99.8°F, 100.4°F, 98.6°F. What is the mode?',
+    options: ['99.8°F', '100.4°F', '98.6°F', '101.2°F'],
+    correct: 2,
+    explanation: '98.6°F appears twice; all others appear once. The mode is the most frequent value.',
+  },
+  {
+    id: 'm-md-4',
+    topicId: 'measurement-data',
+    subjectId: 'math',
+    question: 'A patient drinks: 240 mL juice, 120 mL water, 180 mL broth. What is the total intake in ounces? (1 oz = 30 mL)',
+    options: ['16 oz', '18 oz', '20 oz', '22 oz'],
+    correct: 2,
+    explanation: 'Total = 240 + 120 + 180 = 540 mL. 540 ÷ 30 = 18 oz.',
+  },
+  {
+    id: 'm-md-5',
+    topicId: 'measurement-data',
+    subjectId: 'math',
+    question: 'The mean of six quiz scores is 82. Five of the scores are 78, 85, 90, 76, 84. What is the sixth score?',
+    options: ['77', '79', '81', '79'],
+    correct: 1,
+    explanation: 'Total needed = 82 × 6 = 492. Sum of known scores = 78+85+90+76+84 = 413. Sixth = 492 − 413 = 79.',
+  },
+  {
+    id: 'm-md-6',
+    topicId: 'measurement-data',
+    subjectId: 'math',
+    question: 'A bag has 3 red, 5 blue, and 2 green marbles. What is the probability of randomly picking a blue marble?',
+    options: ['1/2', '1/3', '2/5', '5/8'],
+    correct: 0,
+    explanation: 'Total = 10 marbles. P(blue) = 5/10 = 1/2.',
+  },
+  {
+    id: 'm-md-7',
+    topicId: 'measurement-data',
+    subjectId: 'math',
+    question: 'A patient is 5 feet 6 inches tall. What is this height in centimeters? (1 inch = 2.54 cm)',
+    options: ['157.48 cm', '165.1 cm', '167.64 cm', '170 cm'],
+    correct: 2,
+    explanation: '5 ft 6 in = 66 inches. 66 × 2.54 = 167.64 cm.',
+  },
+  {
+    id: 'm-md-8',
+    topicId: 'measurement-data',
+    subjectId: 'math',
+    question: 'Scores: 55, 62, 70, 70, 85, 91. What is the range?',
+    options: ['26', '31', '36', '21'],
+    correct: 2,
+    explanation: 'Range = highest − lowest = 91 − 55 = 36.',
+  },
+  {
+    id: 'm-md-9',
+    topicId: 'measurement-data',
+    subjectId: 'math',
+    question: 'An IV is running at 60 mL/hr. How many hours will a 480 mL bag last?',
+    options: ['6 hours', '7 hours', '8 hours', '9 hours'],
+    correct: 2,
+    explanation: '480 mL ÷ 60 mL/hr = 8 hours.',
+  },
+  {
+    id: 'm-md-10',
+    topicId: 'measurement-data',
+    subjectId: 'math',
+    question: 'Convert 3,500 grams to kilograms.',
+    options: ['0.35 kg', '3.5 kg', '35 kg', '350 kg'],
+    correct: 1,
+    explanation: '1 kg = 1,000 g. 3,500 ÷ 1,000 = 3.5 kg.',
+  },
+
+  // ─── SCIENCE: Human Anatomy and Physiology ────────────────────────────────
+  {
+    id: 's-ap-1',
+    topicId: 'anatomy-physiology',
+    subjectId: 'science',
+    question: 'Which chamber of the heart pumps oxygenated blood to the body?',
+    options: ['Right atrium', 'Right ventricle', 'Left atrium', 'Left ventricle'],
+    correct: 3,
+    explanation: 'The left ventricle pumps oxygenated blood into the aorta and out to the body. The right ventricle pumps deoxygenated blood to the lungs.',
+  },
+  {
+    id: 's-ap-2',
+    topicId: 'anatomy-physiology',
+    subjectId: 'science',
+    question: 'What is the primary function of the nephron?',
+    options: ['Produce insulin', 'Filter blood and form urine', 'Absorb nutrients', 'Regulate heart rate'],
+    correct: 1,
+    explanation: 'The nephron is the functional unit of the kidney, responsible for filtering blood and producing urine.',
+  },
+  {
+    id: 's-ap-3',
+    topicId: 'anatomy-physiology',
+    subjectId: 'science',
+    question: 'Which part of the nervous system controls the "fight-or-flight" response?',
+    options: ['Parasympathetic', 'Somatic', 'Sympathetic', 'Central nervous system'],
+    correct: 2,
+    explanation: 'The sympathetic nervous system activates fight-or-flight: increased heart rate, dilated pupils, and redirected blood flow to muscles.',
+  },
+  {
+    id: 's-ap-4',
+    topicId: 'anatomy-physiology',
+    subjectId: 'science',
+    question: 'Where does gas exchange (O₂ and CO₂) occur in the lungs?',
+    options: ['Bronchi', 'Trachea', 'Alveoli', 'Pleura'],
+    correct: 2,
+    explanation: 'Alveoli are the tiny air sacs in the lungs where oxygen passes into the blood and CO₂ moves from the blood into the lungs to be exhaled.',
+  },
+  {
+    id: 's-ap-5',
+    topicId: 'anatomy-physiology',
+    subjectId: 'science',
+    question: 'Which hormone is responsible for regulating blood sugar levels by allowing cells to absorb glucose?',
+    options: ['Cortisol', 'Glucagon', 'Insulin', 'Thyroxine'],
+    correct: 2,
+    explanation: 'Insulin, produced by beta cells in the pancreas, allows cells to take up glucose from the blood, lowering blood sugar.',
+  },
+  {
+    id: 's-ap-6',
+    topicId: 'anatomy-physiology',
+    subjectId: 'science',
+    question: 'The sinoatrial (SA) node is important because it:',
+    options: ['Produces red blood cells', 'Initiates the electrical impulse that paces the heartbeat', 'Filters lymph fluid', 'Regulates breathing rate'],
+    correct: 1,
+    explanation: 'The SA node is the heart\'s natural pacemaker, generating the electrical impulse that triggers each heartbeat.',
+  },
+  {
+    id: 's-ap-7',
+    topicId: 'anatomy-physiology',
+    subjectId: 'science',
+    question: 'What is homeostasis?',
+    options: [
+      'The process of cell division',
+      'The body\'s tendency to maintain stable internal conditions',
+      'The breakdown of food into energy',
+      'The immune response to infection',
+    ],
+    correct: 1,
+    explanation: 'Homeostasis is the tendency of the body to maintain a stable internal environment (temperature, pH, blood sugar) via feedback mechanisms.',
+  },
+  {
+    id: 's-ap-8',
+    topicId: 'anatomy-physiology',
+    subjectId: 'science',
+    question: 'In which part of the digestive system does most nutrient absorption occur?',
+    options: ['Stomach', 'Large intestine', 'Small intestine', 'Esophagus'],
+    correct: 2,
+    explanation: 'The small intestine (particularly the jejunum) is the primary site of nutrient absorption, aided by villi and microvilli.',
+  },
+  {
+    id: 's-ap-9',
+    topicId: 'anatomy-physiology',
+    subjectId: 'science',
+    question: 'Normal blood pH range is:',
+    options: ['6.80–7.20', '7.00–7.20', '7.35–7.45', '7.50–7.60'],
+    correct: 2,
+    explanation: 'Normal arterial blood pH is 7.35–7.45. Below 7.35 = acidosis; above 7.45 = alkalosis.',
+  },
+  {
+    id: 's-ap-10',
+    topicId: 'anatomy-physiology',
+    subjectId: 'science',
+    question: 'Which hormone does the adrenal medulla release during stress?',
+    options: ['Insulin', 'Cortisol', 'Epinephrine (adrenaline)', 'Testosterone'],
+    correct: 2,
+    explanation: 'The adrenal medulla releases epinephrine (adrenaline) in response to acute stress, triggering the sympathetic fight-or-flight response.',
+  },
+
+  // ─── SCIENCE: Biology ─────────────────────────────────────────────────────
+  {
+    id: 's-bio-1',
+    topicId: 'biology',
+    subjectId: 'science',
+    question: 'Which organelle is known as the "powerhouse of the cell" because it produces ATP?',
+    options: ['Nucleus', 'Ribosome', 'Mitochondria', 'Golgi apparatus'],
+    correct: 2,
+    explanation: 'Mitochondria carry out cellular respiration to produce ATP — the cell\'s primary energy currency.',
+  },
+  {
+    id: 's-bio-2',
+    topicId: 'biology',
+    subjectId: 'science',
+    question: 'Mitosis produces:',
+    options: [
+      '4 haploid cells that are genetically unique',
+      '2 diploid cells that are genetically identical to the parent',
+      '2 haploid cells for reproduction',
+      '4 diploid cells for growth',
+    ],
+    correct: 1,
+    explanation: 'Mitosis produces two genetically identical diploid daughter cells used for growth and repair.',
+  },
+  {
+    id: 's-bio-3',
+    topicId: 'biology',
+    subjectId: 'science',
+    question: 'What is the correct sequence for protein synthesis?',
+    options: [
+      'Ribosome → mRNA → DNA',
+      'DNA → protein → mRNA',
+      'DNA → mRNA (transcription) → protein (translation)',
+      'mRNA → DNA → protein',
+    ],
+    correct: 2,
+    explanation: 'DNA is transcribed into mRNA in the nucleus; mRNA travels to the ribosome where it is translated into a protein.',
+  },
+  {
+    id: 's-bio-4',
+    topicId: 'biology',
+    subjectId: 'science',
+    question: 'In DNA, adenine (A) pairs with:',
+    options: ['Guanine (G)', 'Cytosine (C)', 'Uracil (U)', 'Thymine (T)'],
+    correct: 3,
+    explanation: 'In DNA: A pairs with T, and G pairs with C. (In RNA, A pairs with U instead of T.)',
+  },
+  {
+    id: 's-bio-5',
+    topicId: 'biology',
+    subjectId: 'science',
+    question: 'A patient has a genotype of Bb (where B = brown eyes, b = blue eyes). What is their phenotype?',
+    options: ['Blue eyes', 'Brown eyes', 'Green eyes', 'Mixed brown and blue'],
+    correct: 1,
+    explanation: 'B (brown) is dominant. Even one copy of the dominant allele produces the dominant phenotype — brown eyes.',
+  },
+  {
+    id: 's-bio-6',
+    topicId: 'biology',
+    subjectId: 'science',
+    question: 'The phases of mitosis in correct order are:',
+    options: [
+      'Metaphase, Prophase, Anaphase, Telophase',
+      'Prophase, Metaphase, Anaphase, Telophase',
+      'Anaphase, Telophase, Prophase, Metaphase',
+      'Telophase, Anaphase, Metaphase, Prophase',
+    ],
+    correct: 1,
+    explanation: 'PMAT: Prophase → Metaphase → Anaphase → Telophase. ("Poor Men Are Tired.")',
+  },
+  {
+    id: 's-bio-7',
+    topicId: 'biology',
+    subjectId: 'science',
+    question: 'Which organelle is responsible for synthesizing proteins?',
+    options: ['Nucleus', 'Ribosome', 'Vacuole', 'Lysosome'],
+    correct: 1,
+    explanation: 'Ribosomes read mRNA and assemble amino acids into proteins through the process of translation.',
+  },
+  {
+    id: 's-bio-8',
+    topicId: 'biology',
+    subjectId: 'science',
+    question: 'Meiosis differs from mitosis primarily because meiosis:',
+    options: [
+      'Occurs only in liver cells',
+      'Produces 4 genetically unique haploid sex cells',
+      'Duplicates chromosomes without dividing',
+      'Results in 2 identical diploid cells',
+    ],
+    correct: 1,
+    explanation: 'Meiosis produces 4 genetically unique haploid cells (egg or sperm) through two divisions. Mitosis produces 2 identical diploid cells.',
+  },
+  {
+    id: 's-bio-9',
+    topicId: 'biology',
+    subjectId: 'science',
+    question: 'What term describes an organism\'s observable traits (e.g., eye color, height)?',
+    options: ['Genotype', 'Phenotype', 'Allele', 'Chromosome'],
+    correct: 1,
+    explanation: 'Phenotype refers to the observable physical characteristics of an organism — the expression of its genes in its environment.',
+  },
+  {
+    id: 's-bio-10',
+    topicId: 'biology',
+    subjectId: 'science',
+    question: 'Which process does the cell membrane use to move molecules from low to high concentration (requires energy)?',
+    options: ['Diffusion', 'Osmosis', 'Active transport', 'Facilitated diffusion'],
+    correct: 2,
+    explanation: 'Active transport moves substances against the concentration gradient (low to high) and requires ATP energy.',
+  },
+
+  // ─── SCIENCE: Chemistry ───────────────────────────────────────────────────
+  {
+    id: 's-chem-1',
+    topicId: 'chemistry',
+    subjectId: 'science',
+    question: 'The atomic number of an element represents the number of:',
+    options: ['Neutrons', 'Protons', 'Electrons only', 'Protons + neutrons'],
+    correct: 1,
+    explanation: 'Atomic number = number of protons. This is the element\'s unique identifier. In a neutral atom, protons = electrons.',
+  },
+  {
+    id: 's-chem-2',
+    topicId: 'chemistry',
+    subjectId: 'science',
+    question: 'A solution with a pH of 3 is:',
+    options: ['Strongly basic', 'Neutral', 'Weakly acidic', 'Strongly acidic'],
+    correct: 3,
+    explanation: 'The pH scale goes from 0 (most acidic) to 14 (most basic). pH 3 is strongly acidic (below 7).',
+  },
+  {
+    id: 's-chem-3',
+    topicId: 'chemistry',
+    subjectId: 'science',
+    question: 'NaCl (table salt) is formed by what type of chemical bond?',
+    options: ['Covalent bond', 'Hydrogen bond', 'Ionic bond', 'Metallic bond'],
+    correct: 2,
+    explanation: 'NaCl is an ionic compound: sodium (Na) donates an electron to chlorine (Cl), creating oppositely charged ions that attract each other.',
+  },
+  {
+    id: 's-chem-4',
+    topicId: 'chemistry',
+    subjectId: 'science',
+    question: 'Which particles are found in the nucleus of an atom?',
+    options: ['Electrons and protons', 'Protons and neutrons', 'Electrons and neutrons', 'Only protons'],
+    correct: 1,
+    explanation: 'The nucleus contains protons (positive charge) and neutrons (no charge). Electrons orbit the nucleus in electron shells.',
+  },
+  {
+    id: 's-chem-5',
+    topicId: 'chemistry',
+    subjectId: 'science',
+    question: 'Carbon-12 and Carbon-14 are isotopes. This means they have the same number of:',
+    options: ['Neutrons but different protons', 'Protons but different neutrons', 'Electrons but different protons', 'Mass numbers but different atomic numbers'],
+    correct: 1,
+    explanation: 'Isotopes of the same element have the same number of protons (same atomic number) but different numbers of neutrons.',
+  },
+  {
+    id: 's-chem-6',
+    topicId: 'chemistry',
+    subjectId: 'science',
+    question: 'H₂O (water) is formed by what type of chemical bond?',
+    options: ['Ionic bond', 'Metallic bond', 'Covalent bond', 'Van der Waals bond'],
+    correct: 2,
+    explanation: 'Water is formed by covalent bonds — hydrogen and oxygen atoms SHARE electrons.',
+  },
+  {
+    id: 's-chem-7',
+    topicId: 'chemistry',
+    subjectId: 'science',
+    question: 'Which best describes an acid?',
+    options: [
+      'A substance that accepts H⁺ ions',
+      'A substance that donates H⁺ ions and has pH > 7',
+      'A substance that donates H⁺ ions and has pH < 7',
+      'A substance with a pH of exactly 7',
+    ],
+    correct: 2,
+    explanation: 'Acids donate H⁺ (hydrogen) ions and have a pH below 7.',
+  },
+  {
+    id: 's-chem-8',
+    topicId: 'chemistry',
+    subjectId: 'science',
+    question: 'In a chemical reaction, the Law of Conservation of Mass states that:',
+    options: [
+      'Mass is always created during reactions',
+      'The total mass of reactants equals the total mass of products',
+      'Mass is destroyed when energy is released',
+      'Products always weigh more than reactants',
+    ],
+    correct: 1,
+    explanation: 'Atoms are neither created nor destroyed in chemical reactions — the total mass remains constant.',
+  },
+  {
+    id: 's-chem-9',
+    topicId: 'chemistry',
+    subjectId: 'science',
+    question: 'Which pH value represents a base?',
+    options: ['pH 2', 'pH 7', 'pH 5', 'pH 9'],
+    correct: 3,
+    explanation: 'pH values above 7 are basic (alkaline). pH 9 is a base; pH 2 and 5 are acidic; pH 7 is neutral.',
+  },
+  {
+    id: 's-chem-10',
+    topicId: 'chemistry',
+    subjectId: 'science',
+    question: 'Blood pH that falls below 7.35 is called:',
+    options: ['Alkalosis', 'Homeostasis', 'Acidosis', 'Neutrality'],
+    correct: 2,
+    explanation: 'Blood pH below 7.35 = acidosis. Above 7.45 = alkalosis. Normal range is 7.35–7.45.',
+  },
+
+  // ─── SCIENCE: Scientific Reasoning ───────────────────────────────────────
+  {
+    id: 's-sr-1',
+    topicId: 'scientific-reasoning',
+    subjectId: 'science',
+    question: 'A researcher wants to test whether a new medication lowers blood pressure. She gives one group the medication and another group a sugar pill. The sugar pill group is the:',
+    options: ['Independent variable', 'Dependent variable', 'Control group', 'Experimental group'],
+    correct: 2,
+    explanation: 'The control group receives no active treatment (sugar pill/placebo) and serves as the baseline for comparison.',
+  },
+  {
+    id: 's-sr-2',
+    topicId: 'scientific-reasoning',
+    subjectId: 'science',
+    question: 'In a study on the effect of sleep deprivation on test scores, what is the independent variable?',
+    options: ['Test scores', 'Amount of sleep', 'The students', 'The type of test'],
+    correct: 1,
+    explanation: 'The independent variable is what the researcher deliberately changes — in this case, the amount of sleep.',
+  },
+  {
+    id: 's-sr-3',
+    topicId: 'scientific-reasoning',
+    subjectId: 'science',
+    question: 'A valid scientific hypothesis must be:',
+    options: [
+      'Proven true before testing',
+      'Based on personal opinion only',
+      'Testable and potentially falsifiable',
+      'Supported by at least 100 studies',
+    ],
+    correct: 2,
+    explanation: 'A scientific hypothesis must be testable (an experiment can be designed) and falsifiable (it could potentially be proven wrong).',
+  },
+  {
+    id: 's-sr-4',
+    topicId: 'scientific-reasoning',
+    subjectId: 'science',
+    question: 'A study finds that cities with more ice cream shops have higher drowning rates. The best interpretation is:',
+    options: [
+      'Ice cream causes drowning.',
+      'Drowning rates cause more ice cream shops.',
+      'Both are related to a third factor (hot weather) — correlation ≠ causation.',
+      'Ice cream shops should be closed near water.',
+    ],
+    correct: 2,
+    explanation: 'Both ice cream consumption and swimming (drowning risk) increase in hot weather. This is a classic correlation-not-causation example with a confounding variable.',
+  },
+  {
+    id: 's-sr-5',
+    topicId: 'scientific-reasoning',
+    subjectId: 'science',
+    question: 'Which of the following is the best example of a testable hypothesis?',
+    options: [
+      'Exercise is good for everyone.',
+      'People who exercise are better than people who do not.',
+      'If adults exercise 30 minutes daily, then their resting heart rate will decrease over 8 weeks.',
+      'Exercise matters more than diet.',
+    ],
+    correct: 2,
+    explanation: 'Option C specifies an independent variable (30 min daily exercise), a dependent variable (resting heart rate), and a timeframe — it is specific and testable.',
+  },
+  {
+    id: 's-sr-6',
+    topicId: 'scientific-reasoning',
+    subjectId: 'science',
+    question: 'Which conclusion is most justified by the following data: "Group A (hand-washing protocol) had 3 infections; Group B (no protocol) had 15 infections."',
+    options: [
+      'Hand washing eliminates all infections forever.',
+      'The hand-washing protocol was associated with fewer infections in this study.',
+      'Group B nurses were careless.',
+      'This proves hand washing cures infections.',
+    ],
+    correct: 1,
+    explanation: 'The data supports an association between the protocol and fewer infections. Stronger language like "eliminates" or "proves" goes beyond what the data shows.',
+  },
+  {
+    id: 's-sr-7',
+    topicId: 'scientific-reasoning',
+    subjectId: 'science',
+    question: 'To ensure a fair test, a researcher keeps room temperature, lighting, and time of day the same for all groups. These are:',
+    options: ['Independent variables', 'Dependent variables', 'Control variables', 'Hypotheses'],
+    correct: 2,
+    explanation: 'Controlled (control) variables are factors held constant so they don\'t interfere with the results — ensuring only the independent variable is being tested.',
+  },
+  {
+    id: 's-sr-8',
+    topicId: 'scientific-reasoning',
+    subjectId: 'science',
+    question: 'Which step of the scientific method comes AFTER forming a hypothesis?',
+    options: ['Making an observation', 'Asking a question', 'Designing and conducting an experiment', 'Reviewing literature'],
+    correct: 2,
+    explanation: 'Scientific method order: Observation → Question → Hypothesis → Experiment → Data analysis → Conclusion.',
+  },
+  {
+    id: 's-sr-9',
+    topicId: 'scientific-reasoning',
+    subjectId: 'science',
+    question: 'Results that can be consistently reproduced by independent researchers are said to be:',
+    options: ['Biased', 'Reproducible', 'Anecdotal', 'Controlled'],
+    correct: 1,
+    explanation: 'Reproducibility — the ability of other researchers to replicate results — is a cornerstone of valid science.',
+  },
+  {
+    id: 's-sr-10',
+    topicId: 'scientific-reasoning',
+    subjectId: 'science',
+    question: 'In a double-blind study, who does NOT know which group received the treatment?',
+    options: [
+      'Only the researcher',
+      'Only the participants',
+      'Both the participants and the researchers conducting the study',
+      'The statistician who analyzes the data',
+    ],
+    correct: 2,
+    explanation: 'Double-blind means both the participants AND the researchers are unaware of treatment assignment, preventing bias from both sides.',
+  },
+
+  // ─── ENGLISH: Conventions ─────────────────────────────────────────────────
+  {
+    id: 'e-conv-1',
+    topicId: 'conventions-english',
+    subjectId: 'english',
+    question: 'Choose the sentence with correct subject-verb agreement:',
+    options: [
+      'Each of the nurses have completed their training.',
+      'Each of the nurses has completed her training.',
+      'Each of the nurses have their own patients.',
+      'Each nurses has completed training.',
+    ],
+    correct: 1,
+    explanation: '"Each" is always singular — it takes a singular verb ("has"). "Each of the nurses HAS" is correct.',
+  },
+  {
+    id: 'e-conv-2',
+    topicId: 'conventions-english',
+    subjectId: 'english',
+    question: 'Which sentence is a comma splice?',
+    options: [
+      'The patient was stable, and the nurse charted her findings.',
+      'The patient was stable; the nurse charted her findings.',
+      'The patient was stable, the nurse charted her findings.',
+      'After the patient was stable, the nurse charted her findings.',
+    ],
+    correct: 2,
+    explanation: 'A comma splice joins two independent clauses with only a comma. Option C has two complete sentences separated by just a comma — that\'s a comma splice.',
+  },
+  {
+    id: 'e-conv-3',
+    topicId: 'conventions-english',
+    subjectId: 'english',
+    question: 'Which sentence uses apostrophes correctly?',
+    options: [
+      "The patients chart's were updated.",
+      "The patient's chart was updated.",
+      "The patients' chart was updated by it's nurse.",
+      "Its the nurses job to update the chart.",
+    ],
+    correct: 1,
+    explanation: "\"Patient's\" = belonging to one patient (singular possessive). \"It's\" means \"it is\" — not the possessive \"its.\"",
+  },
+  {
+    id: 'e-conv-4',
+    topicId: 'conventions-english',
+    subjectId: 'english',
+    question: 'Which sentence contains a sentence fragment?',
+    options: [
+      'The medication was administered on time.',
+      'Running down the hallway toward the patient room.',
+      'She checked the patient\'s vital signs.',
+      'The doctor ordered an MRI.',
+    ],
+    correct: 1,
+    explanation: '"Running down the hallway toward the patient room" has no subject performing the action in a complete sentence structure — it is a fragment.',
+  },
+  {
+    id: 'e-conv-5',
+    topicId: 'conventions-english',
+    subjectId: 'english',
+    question: 'Select the sentence with correct punctuation:',
+    options: [
+      'The doctor ordered three things: rest, fluids, and antibiotics.',
+      'The doctor ordered three things, rest, fluids, and antibiotics.',
+      'The doctor ordered: rest fluids and antibiotics.',
+      'The doctor ordered three things; rest, fluids, and antibiotics.',
+    ],
+    correct: 0,
+    explanation: 'A colon introduces a list after a complete independent clause. Option A uses the colon correctly.',
+  },
+  {
+    id: 'e-conv-6',
+    topicId: 'conventions-english',
+    subjectId: 'english',
+    question: 'Which sentence demonstrates correct pronoun-antecedent agreement?',
+    options: [
+      'Every nurse must submit their timesheet by Friday.',
+      'Every nurse must submit his or her timesheet by Friday.',
+      'Every nurse must submit our timesheet by Friday.',
+      'Every nurses must submit their timesheet by Friday.',
+    ],
+    correct: 1,
+    explanation: '"Every nurse" is singular. The traditional TEAS standard requires a singular pronoun: "his or her." (Note: "their" is increasingly accepted but C is the safest TEAS answer.)',
+  },
+  {
+    id: 'e-conv-7',
+    topicId: 'conventions-english',
+    subjectId: 'english',
+    question: 'Identify the run-on sentence:',
+    options: [
+      'The IV bag was empty, so the nurse replaced it.',
+      'The patient rang the call bell. The nurse responded quickly.',
+      'The medication was due the nurse forgot to administer it.',
+      'Before leaving, she documented all care.',
+    ],
+    correct: 2,
+    explanation: '"The medication was due the nurse forgot to administer it" joins two independent clauses with no punctuation or conjunction — a run-on sentence.',
+  },
+  {
+    id: 'e-conv-8',
+    topicId: 'conventions-english',
+    subjectId: 'english',
+    question: 'FANBOYS stands for the coordinating conjunctions. Which is NOT a coordinating conjunction?',
+    options: ['And', 'But', 'Because', 'Or'],
+    correct: 2,
+    explanation: 'FANBOYS = For, And, Nor, But, Or, Yet, So. "Because" is a SUBORDINATING conjunction, not coordinating.',
+  },
+  {
+    id: 'e-conv-9',
+    topicId: 'conventions-english',
+    subjectId: 'english',
+    question: 'Select the correctly punctuated sentence with two independent clauses:',
+    options: [
+      'The patient was in pain, the nurse called the doctor.',
+      'The patient was in pain; the nurse called the doctor.',
+      'The patient was in pain the nurse called the doctor.',
+      'The patient was in pain, and called the doctor.',
+    ],
+    correct: 1,
+    explanation: 'Two independent clauses can be joined with a semicolon. Option B is correctly punctuated.',
+  },
+  {
+    id: 'e-conv-10',
+    topicId: 'conventions-english',
+    subjectId: 'english',
+    question: 'Which sentence shows correct use of "its" vs "it\'s"?',
+    options: [
+      "It's the hospital's policy to verify ID.",
+      "The hospital updated it's policy last year.",
+      "Its important to check the patient's ID.",
+      "The policy has it's own section in the handbook.",
+    ],
+    correct: 0,
+    explanation: "\"It's\" = \"it is.\" Option A: \"It's the hospital's policy\" = \"It is the hospital's policy\" — correct. The others incorrectly use \"it's\" where the possessive \"its\" is needed.",
+  },
+
+  // ─── ENGLISH: Knowledge of Language ──────────────────────────────────────
+  {
+    id: 'e-kol-1',
+    topicId: 'knowledge-language',
+    subjectId: 'english',
+    question: 'Which version is the most concise and clear?',
+    options: [
+      'Due to the fact that the patient was in a lot of pain, the nurse decided to administer the pain medication.',
+      'Because the patient was in pain, the nurse administered pain medication.',
+      'In light of the painful situation the patient was experiencing, medication was given by the nurse.',
+      'The nurse, seeing that the patient had pain, made the decision to give the pain medication.',
+    ],
+    correct: 1,
+    explanation: 'Option B states the same information in fewest words with no redundancy — always prefer the clearest, most concise version on the TEAS.',
+  },
+  {
+    id: 'e-kol-2',
+    topicId: 'knowledge-language',
+    subjectId: 'english',
+    question: 'Select the sentence with correct parallel structure:',
+    options: [
+      'The new nurse is hardworking, detail-oriented, and has good communication.',
+      'The new nurse is hardworking, detail-oriented, and communicates well.',
+      'The new nurse is hardworking, detail-oriented, and a good communicator.',
+      'The new nurse is hardworking, has good detail, and communicates well.',
+    ],
+    correct: 2,
+    explanation: 'Parallel structure requires the same grammatical form. "hardworking, detail-oriented, and a good communicator" — all adjective phrases — is parallel.',
+  },
+  {
+    id: 'e-kol-3',
+    topicId: 'knowledge-language',
+    subjectId: 'english',
+    question: 'Which transition word best connects: "She studied all night. ___, she passed the exam."',
+    options: ['However', 'Consequently', 'In contrast', 'Nevertheless'],
+    correct: 1,
+    explanation: '"Consequently" (therefore/as a result) shows cause-and-effect — studying all night caused her to pass. "However" and "in contrast" signal contradiction.',
+  },
+  {
+    id: 'e-kol-4',
+    topicId: 'knowledge-language',
+    subjectId: 'english',
+    question: 'Which sentence contains a redundancy that should be removed?',
+    options: [
+      'The patient was discharged at noon.',
+      'The patient was seen by a physician doctor.',
+      'The medication was given orally by mouth.',
+      'Both B and C',
+    ],
+    correct: 3,
+    explanation: '"Physician doctor" is redundant (a physician IS a doctor). "Orally by mouth" is also redundant (oral already means by mouth). Both B and C contain redundancy.',
+  },
+  {
+    id: 'e-kol-5',
+    topicId: 'knowledge-language',
+    subjectId: 'english',
+    question: 'Which transition best fills the blank: "The medication reduces fever; ___, it may cause nausea."',
+    options: ['Therefore', 'However', 'Furthermore', 'Consequently'],
+    correct: 1,
+    explanation: '"However" signals contrast — the second clause introduces an opposing or unexpected piece of information (a side effect despite a benefit).',
+  },
+  {
+    id: 'e-kol-6',
+    topicId: 'knowledge-language',
+    subjectId: 'english',
+    question: 'Which version correctly combines these two sentences? "The patient was anxious. She had never had surgery before."',
+    options: [
+      'The patient was anxious, never had surgery before.',
+      'The patient was anxious because she had never had surgery before.',
+      'The patient was anxious. Never having had surgery before.',
+      'The patient was anxious, and also she had never had surgery before.',
+    ],
+    correct: 1,
+    explanation: 'Option B combines the sentences smoothly using a subordinate clause that shows the causal relationship.',
+  },
+  {
+    id: 'e-kol-7',
+    topicId: 'knowledge-language',
+    subjectId: 'english',
+    question: 'Identify the sentence that uses the most appropriate formal register for a nursing report:',
+    options: [
+      'The patient was really not feeling well and kind of refused the meds.',
+      'The patient verbalized discomfort and declined medication administration at 1400.',
+      'She said she didn\'t want her pills at 2 pm.',
+      'Patient was having a rough time and didn\'t take her stuff.',
+    ],
+    correct: 1,
+    explanation: 'Clinical documentation requires specific, objective, formal language. Option B uses correct clinical terminology and time notation.',
+  },
+  {
+    id: 'e-kol-8',
+    topicId: 'knowledge-language',
+    subjectId: 'english',
+    question: 'Which sentence has a parallelism error?',
+    options: [
+      'She likes reading, writing, and studying.',
+      'The nurse assessed the patient, documented findings, and notified the physician.',
+      'He enjoys to run, swimming, and cycling.',
+      'The report was clear, concise, and accurate.',
+    ],
+    correct: 2,
+    explanation: '"To run, swimming, and cycling" mixes infinitive and gerund forms. It should be "running, swimming, and cycling" (all gerunds).',
+  },
+  {
+    id: 'e-kol-9',
+    topicId: 'knowledge-language',
+    subjectId: 'english',
+    question: 'Which phrase is redundant and should be eliminated?',
+    options: ['end result', 'unexpected surprise', 'final conclusion', 'All of the above'],
+    correct: 3,
+    explanation: '"End result" (results are already at the end), "unexpected surprise" (surprises are unexpected), and "final conclusion" (conclusions are final) are all redundant.',
+  },
+  {
+    id: 'e-kol-10',
+    topicId: 'knowledge-language',
+    subjectId: 'english',
+    question: 'Which word best replaces "a lot of" in a formal sentence?',
+    options: ['Heaps of', 'Numerous', 'Tons of', 'Plenty'],
+    correct: 1,
+    explanation: '"Numerous" is the formal academic equivalent of "a lot of" and is appropriate for professional or academic writing.',
+  },
+
+  // ─── ENGLISH: Vocabulary and Writing ─────────────────────────────────────
+  {
+    id: 'e-voc-1',
+    topicId: 'vocabulary-writing',
+    subjectId: 'english',
+    question: '"The physician prescribed an analgesic, such as ibuprofen, to manage the patient\'s pain." Based on context, "analgesic" most likely means:',
+    options: ['Antibiotic', 'Pain reliever', 'Anti-inflammatory only', 'Sleep medication'],
+    correct: 1,
+    explanation: 'The example given (ibuprofen used to manage pain) directly defines "analgesic" as a pain-relieving medication.',
+  },
+  {
+    id: 'e-voc-2',
+    topicId: 'vocabulary-writing',
+    subjectId: 'english',
+    question: 'What does the prefix "brady-" mean in the word "bradycardia"?',
+    options: ['Fast', 'Normal', 'Slow', 'Irregular'],
+    correct: 2,
+    explanation: '"Brady-" means slow. Bradycardia = slow heart rate (below 60 bpm).',
+  },
+  {
+    id: 'e-voc-3',
+    topicId: 'vocabulary-writing',
+    subjectId: 'english',
+    question: '"The patient was lethargic; unlike her energetic behavior the previous day, she barely responded to questions." What does "lethargic" mean?',
+    options: ['Energetic', 'Confused', 'Abnormally drowsy and sluggish', 'Anxious'],
+    correct: 2,
+    explanation: 'The contrast clue ("unlike her energetic behavior") signals that lethargic is the opposite — abnormally drowsy or sluggish.',
+  },
+  {
+    id: 'e-voc-4',
+    topicId: 'vocabulary-writing',
+    subjectId: 'english',
+    question: 'The suffix "-itis" in words like "gastritis" and "appendicitis" means:',
+    options: ['Removal of', 'Study of', 'Inflammation of', 'Disease of'],
+    correct: 2,
+    explanation: '"-itis" means inflammation. Gastritis = inflammation of the stomach; appendicitis = inflammation of the appendix.',
+  },
+  {
+    id: 'e-voc-5',
+    topicId: 'vocabulary-writing',
+    subjectId: 'english',
+    question: '"Hypo-" as in "hypoglycemia" means:',
+    options: ['Above or excessive', 'Below or deficient', 'Within', 'Fast'],
+    correct: 1,
+    explanation: '"Hypo-" means below or under. Hypoglycemia = low (below normal) blood sugar.',
+  },
+  {
+    id: 'e-voc-6',
+    topicId: 'vocabulary-writing',
+    subjectId: 'english',
+    question: '"The surgeon performed an appendectomy." The suffix "-ectomy" indicates:',
+    options: ['Inflammation', 'Study of', 'Surgical removal', 'Disease'],
+    correct: 2,
+    explanation: '"-ectomy" means surgical removal. Appendectomy = surgical removal of the appendix.',
+  },
+  {
+    id: 'e-voc-7',
+    topicId: 'vocabulary-writing',
+    subjectId: 'english',
+    question: 'What is the correct order of steps in the writing process?',
+    options: [
+      'Drafting → Prewriting → Revising → Editing',
+      'Prewriting → Drafting → Revising → Editing',
+      'Editing → Drafting → Revising → Prewriting',
+      'Revising → Prewriting → Drafting → Editing',
+    ],
+    correct: 1,
+    explanation: 'The writing process: Prewriting (planning) → Drafting (first draft) → Revising (big-picture changes) → Editing (grammar/mechanics).',
+  },
+  {
+    id: 'e-voc-8',
+    topicId: 'vocabulary-writing',
+    subjectId: 'english',
+    question: '"Economical" and "cheap" have the same denotation (low cost) but different connotations. In a positive context, which word would be preferred?',
+    options: ['Cheap', 'Economical', 'They are interchangeable', 'Neither — use "affordable"'],
+    correct: 1,
+    explanation: '"Economical" has a positive connotation (wise with money). "Cheap" has a negative connotation (low quality or stingy).',
+  },
+  {
+    id: 'e-voc-9',
+    topicId: 'vocabulary-writing',
+    subjectId: 'english',
+    question: '"The prefix \'tachy-\' means fast. Based on this, \'tachycardia\' most likely means:"',
+    options: ['Slow breathing', 'Abnormally fast heart rate', 'Irregular heart rhythm', 'Low blood pressure'],
+    correct: 1,
+    explanation: 'Tachy- = fast; -cardia = heart. Tachycardia = abnormally fast heart rate (above 100 bpm).',
+  },
+  {
+    id: 'e-voc-10',
+    topicId: 'vocabulary-writing',
+    subjectId: 'english',
+    question: '"The patient was ambulatory." Given that "ambul-" is the Latin root meaning "to walk," ambulatory most likely means:',
+    options: ['Unconscious', 'Able to walk', 'Requiring surgery', 'Requiring an ambulance'],
+    correct: 1,
+    explanation: '"Ambul-" = to walk. Ambulatory = able to walk independently. (Ambulance is also derived from this root — originally "walking hospital.")',
+  },
+]
+
+export const getQuestionsByTopic = (topicId) => QUESTIONS.filter((q) => q.topicId === topicId)
+export const getQuestionsBySubject = (subjectId) => QUESTIONS.filter((q) => q.subjectId === subjectId)
+export const getRandomQuestions = (topicId, count = 10) => {
+  const pool = getQuestionsByTopic(topicId)
+  const shuffled = [...pool].sort(() => Math.random() - 0.5)
+  return shuffled.slice(0, Math.min(count, shuffled.length))
+}
+export const getQuestionById = (id) => QUESTIONS.find((q) => q.id === id)
+
+// ── Quiz pool (excludes OFF_SPEC, includes TEAS-authentic replacements) ──────
+import { QUESTION_AUDIT } from './questionsAudit'
+import { READING_REPLACEMENTS } from './questionsReading'
+
+function isInPool(q) {
+  const audit = QUESTION_AUDIT[q.id]
+  // If a question already carries alignmentTag inline (replacement questions), use that.
+  if (q.alignmentTag) return q.alignmentTag === 'TEAS'
+  return !audit || audit.alignmentTag !== 'OFF_SPEC'
+}
+
+export const ALL_QUESTIONS = [...QUESTIONS, ...READING_REPLACEMENTS]
+export const QUIZ_POOL = ALL_QUESTIONS.filter(isInPool)
+
+export const getQuizPoolByTopic = (topicId, count = 10) => {
+  const pool = QUIZ_POOL.filter((q) => q.topicId === topicId)
+  const shuffled = [...pool].sort(() => Math.random() - 0.5)
+  return shuffled.slice(0, Math.min(count, shuffled.length))
+}
+
+export const getQuizPoolBySubject = (subjectId) => QUIZ_POOL.filter((q) => q.subjectId === subjectId)
+
+export const getPoolQuestionById = (id) => ALL_QUESTIONS.find((q) => q.id === id)
