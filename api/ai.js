@@ -1,0 +1,355 @@
+import https from 'https'
+
+const MODEL = 'claude-sonnet-4-6'
+
+const SYSTEM_PROMPT = `You are an expert ATI TEAS 7 question author and study coach embedded in Li's TEAS Lab, a personalized nursing school prep app for aspiring nursing students.
+
+## Your primary role
+Author and explain ATI TEAS 7 exam content with the precision of a professional test developer. Every question, rationale, and study note you produce must reflect the actual cognitive style, wording, pacing, and rigor of the official ATI TEAS 7 exam — not generic educational content, not NCLEX-style clinical scenarios.
+
+## ATI TEAS 7 exam structure
+Four subjects with specific section timing:
+- Reading (47 min / 45 scored items): Key Ideas & Details · Craft & Structure · Integration of Knowledge & Ideas
+- Mathematics (54 min / 36 scored items): Numbers & Algebra · Measurement & Data
+- Science (63 min / 50 scored items): Human Anatomy & Physiology · Life & Physical Sciences · Scientific Reasoning
+- English & Language Usage (37 min / 37 scored items): Conventions of Standard English · Knowledge of Language · Vocabulary in Context
+
+## Difficulty distribution
+Always mirror real TEAS distribution — never generate only hard questions:
+- ~30% foundational: direct recall, single-step application, concrete fact
+- ~45% moderate: application, interpretation, two-step reasoning
+- ~25% advanced: multi-step reasoning, inference, synthesis, analysis
+Use difficulty values 1 (foundational), 2 (moderate), 3 (advanced).
+
+## Question stem requirements by subject
+Reading — CRITICAL: Every reading question MUST include a short passage (3–7 sentences) embedded in the stem. The passage topic MUST be drawn from diverse domains: environmental science, history, technology, economics, social science, general science, arts, or workplace topics. NEVER write passages exclusively about nursing workflows, clinical scenarios, hospital procedures, or healthcare staffing — the TEAS Reading section tests comprehension skill across all subjects, not nursing knowledge. The question tests the reading skill (main idea, inference, author's purpose, word meaning, text structure, fact vs. opinion, argument evaluation) — a student should be able to answer correctly without knowing anything about the passage topic.
+Mathematics — Word problems must be realistic but not require extraneous information. One calculation path per question. Match ATI's ratio/algebra/measurement phrasing.
+Science — Test conceptual understanding and mechanism, not vocabulary recall alone. A&P questions should test function and relationship, not just naming.
+English — Provide a sentence or short paragraph for grammar, punctuation, and editing questions. Test one rule at a time. Match ATI's sentence-level editing style.
+
+## Distractor (wrong answer) requirements
+Every wrong answer must:
+1. Reflect a specific, common student misconception on this exact concept
+2. Be plausible to someone with partial knowledge — not obviously absurd
+3. Target a distinct error pattern (confusion, reversal, partial knowledge, overgeneralization)
+4. Feel like it belongs on the real exam
+Never use throwaway options like "None of the above" or implausible fillers.
+
+## Question type specifications
+multiple_choice: 4 options, exactly 1 correct. Most common format.
+multiple_select: 4–6 options, 2–3 correct. Student must select ALL correct answers. Use sparingly, only when concept genuinely has multiple correct components.
+supply_answer: Short numeric or word response. Math and some Science only. Provide the exact expected answer format.
+hot_spot: Describe in text which labeled region, step, or element the student must identify. Use for diagrams, processes, or anatomical identification.
+ordered_response: List 4–6 steps in scrambled order; student must arrange correctly. Use for physiological processes, math procedures, scientific method.
+
+## Rationale requirements
+Every rationale must:
+- Explain WHY the correct answer is correct (the principle, rule, or mechanism)
+- Address why each distractor fails (specific to that distractor, not generic)
+- Name the common trap or misconception clearly
+- Include a memory tip or anchor where it adds real value
+- Be concise: 4–6 sentences total. Do not over-explain. Do not summarize the whole topic.
+Write rationales as a professional tutor speaking to an intelligent student — clear, direct, no hedging.
+
+## What to avoid
+- NCLEX-style paragraph scenarios that test clinical nursing judgment (that is NOT TEAS content)
+- Questions requiring outside knowledge beyond what a pre-nursing student would have
+- Verbose stems that bury the actual question in extra sentences
+- Generic "educational" question patterns that don't match ATI's style
+- Overly detailed rationale paragraphs — clarity beats length
+- AI-style over-explanation or excessive hedging language
+
+## Voice and style
+Write as a professional test-prep author, not a classroom teacher. Use precise, academically appropriate language. Be definitive. If the answer is X, say X — not "X could be considered correct because..."
+
+## Output format
+Always respond with valid JSON exactly matching the schema in the user's request. No markdown fences, no preamble, no commentary after the JSON — raw JSON only.`
+
+function callAnthropic(userMessage, maxTokens = 2048) {
+  return new Promise((resolve, reject) => {
+    const apiKey = process.env.ANTHROPIC_API_KEY
+    if (!apiKey) {
+      reject(new Error('ANTHROPIC_API_KEY is not set.'))
+      return
+    }
+
+    const body = JSON.stringify({
+      model: MODEL,
+      max_tokens: maxTokens,
+      system: [
+        {
+          type: 'text',
+          text: SYSTEM_PROMPT,
+          cache_control: { type: 'ephemeral' },
+        },
+      ],
+      messages: [{ role: 'user', content: userMessage }],
+    })
+
+    const options = {
+      hostname: 'api.anthropic.com',
+      path: '/v1/messages',
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Content-Length': Buffer.byteLength(body),
+        'x-api-key': apiKey,
+        'anthropic-version': '2023-06-01',
+        'anthropic-beta': 'prompt-caching-2024-07-31',
+      },
+    }
+
+    const req = https.request(options, (res) => {
+      let data = ''
+      res.on('data', (chunk) => { data += chunk })
+      res.on('end', () => {
+        try {
+          const parsed = JSON.parse(data)
+          if (res.statusCode >= 400) {
+            reject(new Error(`Anthropic API error ${res.statusCode}: ${parsed?.error?.message ?? data}`))
+            return
+          }
+          resolve(parsed)
+        } catch (e) {
+          reject(new Error(`Failed to parse Anthropic response: ${data}`))
+        }
+      })
+    })
+
+    req.on('error', reject)
+    req.write(body)
+    req.end()
+  })
+}
+
+function buildUserMessage(task, payload) {
+  switch (task) {
+
+    case 'generateNotebookFromTranscript': {
+      const { transcriptText = '', subjectId = '', topicId = '', videoId = '' } = payload
+
+      return `Generate structured ATI TEAS 7 study notes from the transcript or raw notes below.
+Subject: "${subjectId}" | Topic: "${topicId}" | Source: "${videoId || 'user notes'}"
+
+Calibration:
+- All content must be accurate to the ATI TEAS 7 exam scope for this subject and topic.
+- Practice questions must reflect actual TEAS question style, difficulty distribution, and distractor logic per your system-level calibration.
+- Include 3 practice questions: one difficulty-1 (foundational), one difficulty-2 (moderate), one difficulty-3 (advanced).
+
+Return ONLY this JSON (no fences, no extra text):
+{
+  "mainIdea": "one clear sentence — what is this topic fundamentally about",
+  "recapOneMinute": "2–3 sentences a student could read aloud in under 60 seconds; cover the essential mechanism or skill",
+  "whereItFits": "1–2 sentences connecting this topic to the TEAS exam section and typical question types it appears in",
+  "keyTerms": [
+    { "term": "string", "meaning": "precise, exam-relevant definition — not a dictionary definition" }
+  ],
+  "mustKnowFacts": [
+    "string — each fact is a testable, discrete piece of information the TEAS actually tests"
+  ],
+  "writeInNotebook": [
+    "string — a bullet point worth copying by hand; prioritizes retention over comprehensiveness"
+  ],
+  "diagramSuggestions": [
+    "string — concise description of a diagram that helps visualize this concept"
+  ],
+  "memoryTricks": [
+    "string — mnemonics, analogies, or memory anchors; practical and specific"
+  ],
+  "commonTraps": [
+    "string — a specific misconception or error pattern that appears on TEAS; describe the trap clearly"
+  ],
+  "practiceQuestions": [
+    {
+      "questionType": "multiple_choice",
+      "difficulty": 1,
+      "question": "Concise TEAS-style question stem",
+      "options": ["Option A text", "Option B text", "Option C text", "Option D text"],
+      "correctIndex": 0,
+      "rationale": {
+        "whyCorrect": "Explanation of why the correct answer is correct — cite the principle or mechanism",
+        "whyWrong": "Brief explanation addressing each wrong answer: why A/B/C/D fails (whichever are wrong)",
+        "commonTrap": "The specific misconception that causes students to miss this question",
+        "memoryTip": "A short anchor to remember the correct answer"
+      },
+      "teasConceptTested": "Name of the specific TEAS skill or concept being tested"
+    }
+  ],
+  "confuseWith": [
+    {
+      "conceptA": "string",
+      "conceptB": "string",
+      "difference": "The precise distinguishing factor — one sentence, exam-relevant"
+    }
+  ]
+}
+
+Transcript/notes to process:
+${transcriptText}`
+    }
+
+    case 'generateTEASQuestions': {
+      const {
+        subjectId = '',
+        topicId = '',
+        topicName = '',
+        count = 5,
+        difficultyProfile = 'balanced',
+        questionTypes = ['multiple_choice'],
+        excludeQuestionIds = [],
+      } = payload
+
+      const profiles = {
+        balanced:     '~30% foundational (difficulty 1), ~45% moderate (difficulty 2), ~25% advanced (difficulty 3)',
+        foundation:   '~60% foundational (difficulty 1), ~35% moderate (difficulty 2), ~5% advanced (difficulty 3)',
+        challenging:  '~10% foundational (difficulty 1), ~35% moderate (difficulty 2), ~55% advanced (difficulty 3)',
+        spaced:       'mix determined by typical ATI TEAS distribution — roughly balanced but never only hard',
+      }
+
+      const profile = profiles[difficultyProfile] ?? profiles.balanced
+      const typesAllowed = questionTypes.join(', ')
+      const excludeNote = excludeQuestionIds.length
+        ? `\nDo NOT repeat questions with these IDs: ${excludeQuestionIds.join(', ')}`
+        : ''
+
+      return `Generate ${count} ATI TEAS 7 practice questions for:
+Subject: "${subjectId}" | Topic: "${topicName}" (id: "${topicId}")
+Question types to use: ${typesAllowed}
+Difficulty profile: ${profile}${excludeNote}
+
+Requirements (all must be met):
+- Questions must match actual ATI TEAS 7 wording style — concise, academically precise.
+- Distractors must reflect real student misconception patterns for this topic.
+- Each rationale must explain correct + incorrect answers + name the trap + give a memory tip.
+- Do not generate NCLEX-style clinical judgment scenarios.
+- For multiple_select: indicate ALL correct indices in correctIndices array.
+- For supply_answer: provide the exact expected answer and acceptable format.
+- For ordered_response: provide items in scrambled order in options, correct order in correctOrder.
+- For hot_spot: describe the correct region/element clearly in correctDescription.
+
+Return ONLY this JSON array (no fences, no wrapper object):
+[
+  {
+    "id": "generated_${topicId}_1",
+    "questionType": "multiple_choice",
+    "difficulty": 1,
+    "subjectId": "${subjectId}",
+    "topicId": "${topicId}",
+    "question": "Concise TEAS-style question stem. For Reading include a passage. For English include a sentence.",
+    "passage": null,
+    "options": ["Option A", "Option B", "Option C", "Option D"],
+    "correctIndex": 0,
+    "correctIndices": null,
+    "correctAnswer": null,
+    "correctOrder": null,
+    "correctDescription": null,
+    "rationale": {
+      "whyCorrect": "Why the correct answer is right — cite the principle or fact",
+      "whyWrong": "Why each wrong option fails — be specific per option",
+      "commonTrap": "The misconception that leads students to the wrong answer",
+      "memoryTip": "A short mnemonic or anchor"
+    },
+    "teasConceptTested": "Specific TEAS concept or skill",
+    "skillArea": "reading | math | science | english",
+    "isCommonlyMissed": false,
+    "tags": ["tag1", "tag2"]
+  }
+]
+
+Notes on type-specific fields:
+- multiple_choice: set correctIndex (0-based), leave others null
+- multiple_select: set correctIndices array, leave correctIndex null
+- supply_answer: set correctAnswer string, leave others null
+- ordered_response: options = scrambled list, correctOrder = correct index sequence
+- hot_spot: options = labeled regions/elements, correctDescription = which to select and why`
+    }
+
+    case 'explainClip': {
+      const { content = '', type = '', timestampSeconds, userCaption = '', transcriptText = '' } = payload
+      const tsNote = timestampSeconds != null ? `\nSource timestamp: ${timestampSeconds}s` : ''
+      const captionNote = userCaption ? `\nStudent's caption: "${userCaption}"` : ''
+      const transcriptNote = transcriptText
+        ? `\n\nSource transcript excerpt (for context):\n${transcriptText.slice(0, 2000)}`
+        : ''
+
+      return `Explain the following clip saved by a TEAS v7 student.
+Clip type: ${type}${tsNote}${captionNote}
+Content:
+${content}
+${transcriptNote}
+
+Requirements:
+- Identify the specific TEAS 7 concept this clip tests or illustrates.
+- The commonTrap must name the precise misconception (not a generic "students often confuse this").
+- The memoryTip must be concrete and memorable — a mnemonic, analogy, or anchor phrase.
+- Keep everything concise. Exam-voice, not lecture-voice.
+
+Return ONLY this JSON (no fences, no extra text):
+{
+  "clipSummary": "1–2 sentence plain-language summary of what this clip covers",
+  "keyTakeaway": "The single most exam-relevant thing to retain from this clip",
+  "teasConceptTested": "Specific ATI TEAS 7 concept, skill, or rule being illustrated",
+  "difficulty": 2,
+  "commonTrap": "The specific mistake students make on this concept — precise, not generic",
+  "memoryTip": "A concrete mnemonic, analogy, or anchor phrase",
+  "whereItFits": "Which TEAS section and skill area this belongs to (1 sentence)",
+  "practiceQuestion": {
+    "question": "A single TEAS-style question that directly tests this clip's concept",
+    "options": ["Option A", "Option B", "Option C", "Option D"],
+    "correctIndex": 0,
+    "rationale": "Why the correct answer is right and why the primary distractor fails (2–3 sentences)"
+  }
+}`
+    }
+
+    default:
+      return `Task: ${task}\nPayload: ${JSON.stringify(payload, null, 2)}\n\nRespond with JSON.`
+  }
+}
+
+export default async function handler(req, res) {
+  const origin = req.headers.origin || ''
+  if (origin) {
+    res.setHeader('Access-Control-Allow-Origin', origin)
+  }
+  res.setHeader('Access-Control-Allow-Methods', 'POST, OPTIONS')
+  res.setHeader('Access-Control-Allow-Headers', 'Content-Type')
+  res.setHeader('Vary', 'Origin')
+
+  if (req.method === 'OPTIONS') {
+    res.status(204).end()
+    return
+  }
+
+  if (req.method !== 'POST') {
+    res.status(404).json({ error: 'Not found' })
+    return
+  }
+
+  try {
+    const { task, payload = {} } = req.body
+    if (!task) throw new Error('Missing required field: task')
+
+    const maxTokens = task === 'generateTEASQuestions' ? 4096 : 2048
+    const userMessage = buildUserMessage(task, payload)
+    const anthropicResponse = await callAnthropic(userMessage, maxTokens)
+
+    const textBlock = anthropicResponse.content?.find((b) => b.type === 'text')
+    let result
+    try {
+      const cleaned = (textBlock?.text ?? '')
+        .replace(/^```(?:json)?\s*/i, '')
+        .replace(/\s*```\s*$/, '')
+        .trim()
+      result = JSON.parse(cleaned)
+    } catch {
+      result = { raw: textBlock?.text ?? '' }
+    }
+
+    const usage = anthropicResponse.usage ?? {}
+    res.status(200).json({ result, usage })
+  } catch (err) {
+    console.error('[proxy error]', err.message)
+    res.status(500).json({ error: err.message })
+  }
+}
