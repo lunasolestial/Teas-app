@@ -4,6 +4,8 @@ import { APP_NAME } from '../constants/brand'
 import { useMissedBank } from '../hooks/useMissedBank'
 import { useProgress } from '../hooks/useProgress'
 import { useFocusMode } from '../contexts/FocusMode'
+import { useAuth } from '../contexts/AuthContext'
+import AuthModal from './AuthModal'
 
 // ── Navigation items ────────────────────────────────────────────────────────
 // Ordered by study-session frequency: the first 5 are the core loop.
@@ -28,10 +30,12 @@ function useStreak() {
 export default function Layout({ children }) {
   const [menuOpen, setMenuOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
+  const [authOpen, setAuthOpen] = useState(false)
   const { active: focusMode } = useFocusMode()
   const { getBankStats } = useMissedBank()
   const streakCount = useStreak()
   const due = getBankStats().due
+  const { user, signOut, syncing } = useAuth()
 
   // Reduce nav chrome when scrolling — makes content feel less framed
   useEffect(() => {
@@ -131,12 +135,46 @@ export default function Layout({ children }) {
                 ))}
               </nav>
 
-              {/* Right side: streak + mobile trigger */}
+              {/* Right side: streak + user + mobile trigger */}
               <div className="flex items-center gap-2 ml-auto shrink-0">
                 {streakCount > 0 && (
                   <span className="inline-flex items-center gap-1 text-[11px] font-bold text-amber-300 bg-amber-500/15 border border-amber-500/20 px-2.5 py-1 rounded-lg">
                     🔥 {streakCount}d
                   </span>
+                )}
+
+                {/* User auth button */}
+                {user ? (
+                  <div className="relative group">
+                    <button
+                      className="flex items-center gap-2 pl-2 pr-2.5 py-1.5 rounded-xl hover:bg-white/10 transition-colors"
+                      title={user.email}
+                    >
+                      <div className="w-6 h-6 rounded-full bg-gradient-to-br from-lavender to-teal-400 flex items-center justify-center text-white text-[10px] font-black">
+                        {(user.user_metadata?.full_name || user.email || '?')[0].toUpperCase()}
+                      </div>
+                      {syncing && (
+                        <span className="text-[9px] text-white/40 hidden md:block">syncing…</span>
+                      )}
+                    </button>
+                    {/* Dropdown */}
+                    <div className="absolute right-0 top-full mt-1 w-44 bg-white rounded-xl shadow-lg border border-slate-100 py-1 opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto transition-opacity z-50">
+                      <p className="px-3 py-2 text-[11px] text-slate-400 truncate border-b border-slate-50">{user.email}</p>
+                      <button
+                        onClick={signOut}
+                        className="w-full text-left px-3 py-2 text-sm text-slate-600 hover:bg-slate-50 transition-colors"
+                      >
+                        Sign out
+                      </button>
+                    </div>
+                  </div>
+                ) : (
+                  <button
+                    onClick={() => setAuthOpen(true)}
+                    className="hidden md:flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-[11px] font-bold text-white/50 hover:text-white hover:bg-white/10 transition-colors"
+                  >
+                    Sign in
+                  </button>
                 )}
 
                 {/* Mobile menu button */}
@@ -150,6 +188,9 @@ export default function Layout({ children }) {
                   </svg>
                 </button>
               </div>
+
+              {/* Auth modal */}
+              {authOpen && <AuthModal onClose={() => setAuthOpen(false)} />}
 
             </div>
           </div>
@@ -221,6 +262,30 @@ export default function Layout({ children }) {
                   </svg>
                 </button>
               </div>
+            </div>
+
+            {/* Mobile auth row */}
+            <div className="px-4 py-3 border-b border-white/[0.06]">
+              {user ? (
+                <div className="flex items-center justify-between">
+                  <div className="flex items-center gap-2">
+                    <div className="w-7 h-7 rounded-full bg-gradient-to-br from-lavender to-teal-400 flex items-center justify-center text-white text-xs font-black">
+                      {(user.user_metadata?.full_name || user.email || '?')[0].toUpperCase()}
+                    </div>
+                    <span className="text-xs text-white/50 truncate max-w-[160px]">{user.email}</span>
+                  </div>
+                  <button onClick={signOut} className="text-xs font-bold text-white/40 hover:text-white/70 transition-colors">
+                    Sign out
+                  </button>
+                </div>
+              ) : (
+                <button
+                  onClick={() => { setMenuOpen(false); setAuthOpen(true) }}
+                  className="w-full flex items-center justify-center gap-2 py-2.5 rounded-xl bg-white/[0.06] border border-white/[0.08] text-sm font-bold text-white/60 hover:text-white hover:bg-white/10 transition-colors"
+                >
+                  Sign in to sync progress
+                </button>
+              )}
             </div>
 
             {/* Nav grid — 3 columns */}

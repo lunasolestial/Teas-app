@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import { FocusModeProvider } from './contexts/FocusMode'
+import { AuthProvider } from './contexts/AuthContext'
 import Layout from './components/Layout'
 import SplashScreen from './components/SplashScreen'
 import OnboardingModal, { useOnboarding } from './components/OnboardingModal'
@@ -63,9 +64,11 @@ function AppContent() {
 export default function App() {
   return (
     <BrowserRouter>
-      <FocusModeProvider>
-        <AppContent />
-      </FocusModeProvider>
+      <AuthProvider>
+        <FocusModeProvider>
+          <AppContent />
+        </FocusModeProvider>
+      </AuthProvider>
     </BrowserRouter>
   )
 }
