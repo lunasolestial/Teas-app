@@ -55,6 +55,8 @@ export default function Layout({ children }) {
     // focusMode hides the top nav but keeps the same DOM tree.
     <div className="min-h-screen bg-cream flex flex-col">
 
+      {authOpen && <AuthModal onClose={() => setAuthOpen(false)} />}
+
       {/* ── Top navigation bar — dark glass ───────────────────────────────── */}
       {!focusMode && (
         <header
@@ -189,8 +191,6 @@ export default function Layout({ children }) {
                 </button>
               </div>
 
-              {/* Auth modal */}
-              {authOpen && <AuthModal onClose={() => setAuthOpen(false)} />}
 
             </div>
           </div>
