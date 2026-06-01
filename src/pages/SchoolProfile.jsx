@@ -1,6 +1,7 @@
-import { useState } from 'react'
+import { useState, useRef, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { useSchoolProfile, DEFAULT_PROFILE } from '../hooks/useSchoolProfile'
+import { searchSchools } from '../data/schools'
 
 const SUBJECT_FIELDS = [
   { key: 'reading', label: 'Reading',  icon: '📖', color: 'text-blue-600' },
@@ -18,6 +19,92 @@ function clamp(val) {
 const inputCls = 'w-full rounded-xl border border-warm-200 px-3.5 py-2.5 text-sm text-navy bg-white focus:outline-none focus:ring-2 focus:ring-lavender/40 transition placeholder:text-slate-300'
 const numInputCls = 'w-20 rounded-xl border border-warm-200 px-3 py-2.5 text-sm text-navy bg-white focus:outline-none focus:ring-2 focus:ring-lavender/40 transition text-center font-bold'
 
+function SchoolSearch({ value, onChange, onSelect }) {
+  const [query, setQuery] = useState(value || '')
+  const [results, setResults] = useState([])
+  const [open, setOpen] = useState(false)
+  const [activeIdx, setActiveIdx] = useState(-1)
+  const wrapRef = useRef(null)
+
+  useEffect(() => {
+    setQuery(value || '')
+  }, [value])
+
+  useEffect(() => {
+    const found = searchSchools(query)
+    setResults(found)
+    setOpen(found.length > 0 && query.length >= 2)
+    setActiveIdx(-1)
+  }, [query])
+
+  useEffect(() => {
+    function handleClick(e) {
+      if (wrapRef.current && !wrapRef.current.contains(e.target)) setOpen(false)
+    }
+    document.addEventListener('mousedown', handleClick)
+    return () => document.removeEventListener('mousedown', handleClick)
+  }, [])
+
+  function handleKey(e) {
+    if (!open) return
+    if (e.key === 'ArrowDown') { e.preventDefault(); setActiveIdx((i) => Math.min(i + 1, results.length - 1)) }
+    if (e.key === 'ArrowUp')   { e.preventDefault(); setActiveIdx((i) => Math.max(i - 1, -1)) }
+    if (e.key === 'Enter' && activeIdx >= 0) { e.preventDefault(); pick(results[activeIdx]) }
+    if (e.key === 'Escape') setOpen(false)
+  }
+
+  function pick(school) {
+    setQuery(school.name)
+    setOpen(false)
+    onSelect(school)
+  }
+
+  function handleChange(e) {
+    const v = e.target.value
+    setQuery(v)
+    onChange(v)
+  }
+
+  return (
+    <div ref={wrapRef} className="relative">
+      <input
+        type="text"
+        value={query}
+        onChange={handleChange}
+        onKeyDown={handleKey}
+        onFocus={() => { if (results.length > 0) setOpen(true) }}
+        placeholder="Search by school name or city…"
+        className={inputCls}
+        autoComplete="off"
+      />
+      {open && (
+        <ul className="absolute z-50 mt-1 w-full bg-white border border-warm-200 rounded-xl shadow-lg overflow-hidden">
+          {results.map((school, i) => (
+            <li
+              key={school.name}
+              onMouseDown={() => pick(school)}
+              onMouseEnter={() => setActiveIdx(i)}
+              className={`px-4 py-3 cursor-pointer text-sm border-b border-warm-100 last:border-0 ${
+                i === activeIdx ? 'bg-lavender-50' : 'hover:bg-warm-50'
+              }`}
+            >
+              <p className="font-bold text-navy leading-tight">{school.name}</p>
+              <p className="text-xs text-slate-400 mt-0.5">
+                {school.city}, {school.state} · {school.program}
+                {school.teas.overall != null && (
+                  <span className="ml-1.5 text-teal-600 font-semibold">
+                    · Min {school.teas.overall}% overall
+                  </span>
+                )}
+              </p>
+            </li>
+          ))}
+        </ul>
+      )}
+    </div>
+  )
+}
+
 export default function SchoolProfile() {
   const { profile, saveProfile } = useSchoolProfile()
   const [form, setForm] = useState({
@@ -28,8 +115,9 @@ export default function SchoolProfile() {
     requiredBySubject: { ...profile.requiredBySubject },
   })
   const [saved, setSaved] = useState(false)
+  const [autoFilled, setAutoFilled] = useState(false)
 
-  function field(key, value) { setForm((f) => ({ ...f, [key]: value })); setSaved(false) }
+  function field(key, value) { setForm((f) => ({ ...f, [key]: value })); setSaved(false); setAutoFilled(false) }
 
   function subjectGoal(key, raw) {
     setForm((f) => ({
@@ -40,6 +128,24 @@ export default function SchoolProfile() {
       },
     }))
     setSaved(false)
+    setAutoFilled(false)
+  }
+
+  function handleSchoolSelect(school) {
+    setForm((f) => ({
+      ...f,
+      schoolName:  school.name,
+      programName: school.program,
+      requiredOverall: school.teas.overall ?? '',
+      requiredBySubject: {
+        reading: school.teas.reading ?? school.competitive?.reading ?? '',
+        math:    school.teas.math    ?? school.competitive?.math    ?? '',
+        science: school.teas.science ?? school.competitive?.science ?? '',
+        english: school.teas.english ?? school.competitive?.english ?? '',
+      },
+    }))
+    setSaved(false)
+    setAutoFilled(true)
   }
 
   function handleSave(e) {
@@ -52,6 +158,7 @@ export default function SchoolProfile() {
       ),
     })
     setSaved(true)
+    setAutoFilled(false)
     setTimeout(() => setSaved(false), 3000)
   }
 
@@ -77,13 +184,14 @@ export default function SchoolProfile() {
           <div className="space-y-3.5">
             <div>
               <label className="block text-xs font-bold text-slate-600 mb-1.5">School Name</label>
-              <input
-                type="text"
+              <SchoolSearch
                 value={form.schoolName}
-                onChange={(e) => field('schoolName', e.target.value)}
-                placeholder="e.g. Central Piedmont Community College"
-                className={inputCls}
+                onChange={(v) => field('schoolName', v)}
+                onSelect={handleSchoolSelect}
               />
+              <p className="text-[10px] text-slate-400 mt-1.5">
+                Type to search — selecting a school auto-fills score requirements.
+              </p>
             </div>
             <div>
               <label className="block text-xs font-bold text-slate-600 mb-1.5">Program</label>
@@ -112,7 +220,14 @@ export default function SchoolProfile() {
 
         {/* Score Requirements */}
         <div className="bg-white rounded-2xl shadow-card border border-warm-200 p-5">
-          <p className="text-[10px] font-extrabold text-slate-400 uppercase tracking-[0.14em] mb-1">Required Scores</p>
+          <div className="flex items-start justify-between mb-1">
+            <p className="text-[10px] font-extrabold text-slate-400 uppercase tracking-[0.14em]">Required Scores</p>
+            {autoFilled && (
+              <span className="text-[10px] font-bold text-teal-600 bg-teal-50 border border-teal-100 rounded-full px-2 py-0.5">
+                Auto-filled · edit freely
+              </span>
+            )}
+          </div>
           <p className="text-xs text-slate-400 mb-4">
             These targets power your readiness status and gap indicators. Leave blank if unknown.
           </p>
@@ -130,7 +245,7 @@ export default function SchoolProfile() {
                 max="100"
                 value={form.requiredOverall}
                 onChange={(e) => field('requiredOverall', e.target.value === '' ? '' : clamp(e.target.value))}
-                placeholder="80"
+                placeholder="—"
                 className={numInputCls}
               />
               <span className="text-sm font-bold text-slate-500">%</span>
@@ -161,33 +276,13 @@ export default function SchoolProfile() {
               </div>
             ))}
           </div>
-        </div>
 
-        {/* CPCC defaults reference */}
-        <div className="bg-warm-50 border border-warm-200 rounded-2xl px-4 py-3.5 flex items-start gap-3">
-          <span className="text-base mt-0.5">🏫</span>
-          <div className="flex-1">
-            <p className="text-xs font-bold text-slate-600">CPCC Nursing Defaults</p>
-            <p className="text-xs text-slate-400 mt-0.5">
-              Overall 80% · Reading 80% · Math 70% · Science 75% · English 75%
+          {autoFilled && (
+            <p className="text-[10px] text-slate-400 mt-3 leading-relaxed">
+              * Requirements are sourced from publicly available admissions data and may have changed.
+              Always verify with your school's nursing admissions office.
             </p>
-          </div>
-          <button
-            type="button"
-            onClick={() => {
-              setForm({
-                schoolName:        DEFAULT_PROFILE.schoolName,
-                programName:       DEFAULT_PROFILE.programName,
-                testDate:          DEFAULT_PROFILE.testDate,
-                requiredOverall:   DEFAULT_PROFILE.requiredOverall,
-                requiredBySubject: { ...DEFAULT_PROFILE.requiredBySubject },
-              })
-              setSaved(false)
-            }}
-            className="text-xs font-bold text-lavender hover:text-lavender-500 whitespace-nowrap transition-colors"
-          >
-            Apply
-          </button>
+          )}
         </div>
 
         {/* Save */}

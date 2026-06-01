@@ -2,20 +2,18 @@ import { useState, useCallback } from 'react'
 
 const STORAGE_KEY = 'teas_school_profile_v1'
 
-// Default profile — CPCC values for Kaliya; any user can override.
-// These also match the hardcoded CPCC_GOALS in subjects.js so existing
-// users see no change on first load.
+// Empty default — new users pick their school via the search on SchoolProfile.
 export const DEFAULT_PROFILE = {
-  schoolName:  'Central Piedmont Community College',
-  programName: 'Nursing / Associate Degree',
-  requiredOverall: 80,
+  schoolName:  '',
+  programName: '',
+  requiredOverall: null,
   requiredBySubject: {
-    reading: 80,
-    math:    70,
-    science: 75,
-    english: 75,
+    reading: null,
+    math:    null,
+    science: null,
+    english: null,
   },
-  testDate: '',  // ISO date string or empty
+  testDate: '',
 }
 
 function load() {
