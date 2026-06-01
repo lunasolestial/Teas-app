@@ -11,7 +11,7 @@ export default function AuthModal({ onClose }) {
   const [loading, setLoading] = useState(false)
   const [emailSent, setEmailSent] = useState(false)
 
-  const googleEnabled = !!supabase
+  const googleEnabled = false // requires Google Cloud OAuth setup in Supabase dashboard
 
   async function handleEmailSubmit(e) {
     e.preventDefault()
