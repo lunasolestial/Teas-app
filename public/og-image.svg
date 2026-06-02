@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1200 630" width="1200" height="630">
   <defs>
-    <linearGradient id="nav-bg" x1="0" y1="0" x2="0" y2="1">
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
       <stop offset="0%" stop-color="#0a0816"/>
       <stop offset="100%" stop-color="#0d0b1f"/>
     </linearGradient>
@@ -9,57 +9,17 @@
       <stop offset="55%" stop-color="#2050C8"/>
       <stop offset="100%" stop-color="#2AAFA3"/>
     </linearGradient>
+    <radialGradient id="glow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#2050C8" stop-opacity="0.22"/>
+      <stop offset="100%" stop-color="#0a0816" stop-opacity="0"/>
+    </radialGradient>
     <clipPath id="circle-clip">
-      <circle cx="600" cy="268" r="130"/>
+      <circle cx="600" cy="315" r="280"/>
     </clipPath>
   </defs>
-
-  <!-- Background matching the nav bar dark -->
-  <rect width="1200" height="630" fill="url(#nav-bg)"/>
-
-  <!-- Subtle vignette glow behind logo -->
-  <radialGradient id="center-glow" cx="50%" cy="43%" r="40%">
-    <stop offset="0%" stop-color="#2050C8" stop-opacity="0.18"/>
-    <stop offset="100%" stop-color="#0a0816" stop-opacity="0"/>
-  </radialGradient>
-  <rect width="1200" height="630" fill="url(#center-glow)"/>
-
-  <!-- Gradient circle (matches nav: linear-gradient(135deg, #9580D4 0%, #2050C8 55%, #2AAFA3 100%)) -->
-  <circle cx="600" cy="268" r="130" fill="url(#logo-grad)"/>
-  <!-- Ring highlight matching nav box-shadow: 0 0 0 2px rgba(149,128,212,0.35) -->
-  <circle cx="600" cy="268" r="132" fill="none" stroke="rgba(149,128,212,0.35)" stroke-width="4"/>
-
-  <!-- Syringe image centred inside the circle -->
-  <image
-    href="/brand/syringe.png"
-    x="496"
-    y="164"
-    width="208"
-    height="208"
-    clip-path="url(#circle-clip)"
-    preserveAspectRatio="xMidYMid meet"
-  />
-
-  <!-- Wordmark: "li" italic serif + "lab." small-caps bold -->
-  <text
-    x="547"
-    y="462"
-    text-anchor="middle"
-    fill="white"
-    font-family="Georgia,'Palatino Linotype',serif"
-    font-style="italic"
-    font-weight="300"
-    font-size="52"
-    letter-spacing="-0.01em"
-  >li</text>
-  <text
-    x="653"
-    y="462"
-    text-anchor="middle"
-    fill="rgba(255,255,255,0.6)"
-    font-family="'Arial Black','Plus Jakarta Sans',Arial,sans-serif"
-    font-weight="800"
-    font-size="26"
-    letter-spacing="0.06em"
-  >lab.</text>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <rect width="1200" height="630" fill="url(#glow)"/>
+  <circle cx="600" cy="315" r="280" fill="url(#logo-grad)"/>
+  <circle cx="600" cy="315" r="283" fill="none" stroke="rgba(149,128,212,0.3)" stroke-width="5"/>
+  <image href="/brand/syringe.png" x="348" y="63" width="504" height="504" clip-path="url(#circle-clip)" preserveAspectRatio="xMidYMid meet"/>
 </svg>
